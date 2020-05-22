@@ -1,1 +1,3 @@
-开发框架2.0使用说明：https://docs.bk.tencent.com/blueapps/USAGE.html
+**选择题练习系统**
+
+部署教程：
