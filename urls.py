@@ -9,7 +9,7 @@ urlpatterns = [
     # 如果你习惯使用 Django 模板，请在 home_application 里开发你的应用，
     # 这里的 home_application 可以改成你想要的名字
     # url(r'^', include('home_application.urls')),
-    url(r'^exam/', include('exam.urls')),
+    url(r'^', include('exam.urls')),
     # 如果你习惯使用 mako 模板，请在 mako_application 里开发你的应用，
     # 这里的 mako_application 可以改成你想要的名字
     url(r'^mako/', include('mako_application.urls')),
