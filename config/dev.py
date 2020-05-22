@@ -27,14 +27,10 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lanjinexam1',
-        # 'NAME': 'examtest1',
-        # 'USER': 'yangxin',
-        'USER': 'root',
-        'PASSWORD': '1',
-        # 'PASSWORD': 'yangxin',
-        'HOST': '192.168.5.72',
-        # 'HOST': 'localhost',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '3306',
     },
 }
