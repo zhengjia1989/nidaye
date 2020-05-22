@@ -1,0 +1,3351 @@
+运维开发工程师(BKDS)理论基础
+
+*#*1. 蓝鲸SaaS开发框架包含哪些Web防护策略？*#*
+
+    A. 防 CSRF 攻击
+    B. 防 XSS 攻击
+    C. 防 SQL注入
+    D. 没有Web安全防护
+
+    正确答案：A,B,C
+
+*#*2. 社区版如何将第三方系统放在工作台中使用？*#*
+
+    A. 社区版不支持第三方系统链接接入
+    B. 通过修改配置文件添加第三方系统链接
+    C. 通过PaaS平台DB管理端：domain/admin，添加“常用链接”
+    D. 直接登录数据库，修改DB数据，添加“常用链接”
+
+    正确答案：C,D
+
+*#*3. 以下哪些是生成器自身的方法？*#*
+
+    A. close
+    B. send
+    C. next
+    D. throw
+
+    正确答案：A,B,D
+
+*#*4. 新式类继承了 object 基类之后对应的 mro 方法返回的是?*#*
+
+    A. 基类定义的属性列表
+    B. 继承的子类列表
+    C. 属性搜索的顺序
+    D. 属性异常
+
+    正确答案：C
+
+*#*5. Python 中的 docstring 有何作用?*#*
+
+    A. 用于描述对应代码用途
+    B. 使用 Sphinx 生成文档
+    C. 用于定义多行字符串
+    D. 使用 doctest 进行测试
+
+    正确答案：A,B,D
+
+*#*6. 蓝鲸MagicBox提供了哪些服务？*#*
+
+    A. 常用UI组件
+    B. 常用JS插件
+    C. 页面套餐样例
+    D. 在线可视化拖拽布局
+
+    正确答案：A,B,C,D
+
+*#*7. 蓝鲸APP调用ESB组件方式包括？*#*
+
+    A. 使用APP开发框架中提供的ESB组件SDK包
+    B. 不调用ESB组件，直接调用第三方系统API
+    C. APP不能调用ESB组件
+    D. 根据ESB组件API地址直接访问
+
+    正确答案：A,D
+
+*#*8. 蓝鲸APP调用ESB组件鉴权方式包含？*#*
+
+    A. 应用认证和用户认证
+    B. 仅应用认证
+    C. 仅用户认证
+    D. 没有认证
+
+    正确答案：A
+
+*#*9. 判断某个 key 是否在字典 d 中存在，以下做法正确且严谨的是：*#*
+
+    A. 'key' in d.keys()
+    B. d.get('key') is not None
+    C. hasattr(d, 'key')
+    D. 'key' in d
+
+    正确答案：A,D
+
+*#*10. 假设 d 为一个空字典 d = {}。以下语句中执行后，d 的内容将会变为 {'key': 1}：*#*
+
+    A. d['key'] = 1
+    B. d.update('key'=1)
+    C. d.setdefault('key', 1)
+    D. d.update(key=1)
+
+    正确答案：A,C,D
+
+*#*11. 关于 Python 中的元组 list 和列表 tuple，以下描述错误的是：*#*
+
+    A. 二者都可以通过循环语句来迭代
+    B. 二者都可以追加元素
+    C. 二者都可以删除元素
+    D. 只有列表可以作为函数的变长位置参数解包 func(*foo_list)
+
+    正确答案：B,C,D
+
+*#*12. 以下哪些结果一定是一个一维列表['1', '2', '3']？*#*
+
+    A. list("123")
+    B. map(unicode, range(1, 3))
+    C. [("1"), ("2"), ("3")]
+    D. [("1",), ("2",), ("3",)]
+
+    正确答案：A,C
+
+*#*13. 以下哪些魔术方法用于实现上下文管理器（with）？*#*
+
+    A. __with__
+    B. __enter__
+    C. __open__
+    D. __exit__
+
+    正确答案：B,D
+
+*#*14. 以下哪些是合法的 pip 安装命令？*#*
+
+    A. pip install Django>=1.8
+    B. pip install -r requirements.txt
+    C. pip -e git+http://git.example.com/MyProject#egg=MyProject
+    D. pip install ./SomePackage-1.0.4.tar.gz
+
+    正确答案：A,B,C,D
+
+*#*15. 以下哪些命令能够使用 Python 虚拟环境 venv？*#*
+
+    A. venv/bin/python
+    B. source venv/bin/activate
+    C. workon venv
+    D. pipenv shell
+
+    正确答案：A,B,C,D
+
+*#*16. 假设 parser = argparse.ArgumentParser()，以下能够正确声明参数的是？*#*
+
+    A. parser.add_argument("x")
+    B. parser.add_argument("-x")
+    C. parser.add_argument_group("-x", "—x")
+    D. parser.parse_args("x")
+
+    正确答案：A,B
+
+*#*17. 以下哪些问题是 Python 的 GIL 导致的？*#*
+
+    A. 无法创建系统级别的线程
+    B. GIL 导致了线程间的不公平调度
+    C. 计算密集型程序会因为 GIL 而变得更慢
+    D. IO 密集型程序也无法使用多线程模型加速
+
+    正确答案：B,C
+
+*#*18. 关于 Python 的导入机制，以下说法错误的是？*#*
+
+    A. 首先检查 sys.modules 是否有对应模块，有则使用，无则导入
+    B. 被导入的模块最顶层的语句会在每次导入时都运行
+    C. 一般导入的搜索路径顺序由 sys.path 定义
+    D. 如果对应有同名的 py 和 pyc 文件，优先导入 pyc 文件
+
+    正确答案：A,C
+
+*#*19. 使用 unittest 库编写单元测试的必要过程是？*#*
+    A. 测试用例继承 unittest.TestCase 类
+    B. 编写以 test 开头的方法运行测试用例
+    C. 编写 setUp 和 tearDown 来加载和卸载测试环境
+    D. 调用 unittest.main 函数运行测试
+
+    正确答案：A,B,D
+
+*#*20. 以下哪些行为可以使得程序同时兼容 Python2 和 Python3？*#*
+
+    A. 使用 2to3 工具进行转换
+    B. 使用 six 库
+    C. 使用 sys.version 判断版本进行区分
+    D. import 时捕获 ImportError 异常尝试使用另一个版本的路径引入
+
+    正确答案：B,C,D
+
+*#*21. 以下哪些是 Python3 相对于 Python2 的改动？*#*
+
+    A. 字符串默认使用 unicode
+    B. 使用新的字符串格式化方法 format 取代 % 运算符
+    C. 整数除法行为改变
+    D. range 变得和 xrange 一样返回迭代器
+
+    正确答案：A,C
+
+*#*22. 以下哪些用法不是 PEP8 建议的？*#*
+
+    A. assert greeting == True
+    B. if not foo is None: pass
+    C. foo = (0,)
+    D. import sys, os
+
+    正确答案：A,B,D
+
+*#*23. 关于 Cookie 安全，以下说法正确的是*#*
+
+    A. 将 HttpOnly 设置为 True 可防止页面脚本写入 Cookie
+    B. 设置 Secure 为 True 后，浏览器只有在 HTTPS 协议下访问才会发送该 Cookie
+    C. 保存到 Cookie 里面的敏感信息需要加密
+    D. 需要给 Cookie 设置有效期
+
+    正确答案：B,C,D
+
+*#*24. 关于 Django 开发安全，以下说法正确的是*#*
+
+    A. 在生产环境下关闭 DEBUG 模式
+    B. 修改数据的表单开启 CSRF 保护
+    C. 返回给 JavaScript 使用的数据先进行 JSON 编码
+    D. 修改默认的 Admin URL
+
+    正确答案：A,B,C,D
+
+*#*25. 实现头像上传功能时，下列哪些手段可以避免文件上传漏洞？*#*
+
+    A. 限制图片存储目录下的执行权限
+    B. 后台禁止文件名中使用特殊字符
+    C. 禁止用户自定义存储目录
+    D. 前端校验所需的文件类型
+
+    正确答案：A,B,C
+
+*#*26. 关于 Mako 模板的使用，以下说法正确的是*#*
+
+    A. "${2 ** 6}" 与 "${pow(2, 6)}" 的渲染结果相等
+    B. 使用多个过滤器可通过多个管道符实现，如 ${" this is some text " | trim | u} 
+    C. 在 for 语句中，可通过 ${loop.index} 获取当前循环遍历的下标
+    D. 渲染模板 "${a}“ 时，若变量 "a" 没有被定义，会导致模板渲染失败
+
+    正确答案：A,C,D
+
+*#*27. 关于 Mako 模板标签，下列说法正确的是*#*
+
+    A. <%doc> 标签中的内容不会被渲染出来
+    B. 使用 <%def> 标签的内容会被立即执行
+    C. 可使用 <# #> 标签对内容进行多行注释
+    D. 可使用 <% return %> 标签提前中止模板渲染
+
+    正确答案：A,D
+
+*#*28. 关于 Mako 模板，下列说法正确的是*#*
+
+    A. Mako 模板引擎依赖于 Django 框架
+    B. 在 Mako 模板中，能够内嵌 Python 代码
+    C. 在 Mako 模板中，使用 "{{ }}" 语法渲染变量
+    D. Mako 模板支持 try-except 异常控制语句 
+
+    正确答案：B,D
+
+*#*29. 关于 Python 3 里面的字典 dict 类型，以下说法错误的是：*#*
+
+    A. 字典的 key 是不可重复的
+    B. 元组类型可以被用来当做字典的 key
+    C. 列表类型可以被用来当做字典的 key
+    D. 整数类型可以被用来当做字典的 key
+
+    正确答案：C
+
+*#*0. 下面这段代码执行后的结果为：
+for i in range(10):
+    if i == 10:
+        print('break')
+        break
+else:
+    print('else')
+*#*
+    A. 输出 break
+    B. 输出 else
+    C. 输出 break 与 else
+    D. 什么都不会输出
+
+    正确答案：B
+
+*#*31. 关于 Python 3 里的内建函数 range，以下说法错误的是：*#*
+
+    A. range 函数可以生成递增的整数序列
+    B. range 函数可以生成递减的整数序列
+    C. range(3, 10) 里面包含数字 3
+    D. range(3, 10) 里面包含数字 10
+
+    正确答案：D
+
+*#*32. 在 Python 3 中，对于一个列表 l = ["Hello", "World"]，以下哪些语句可以正常输出"Hello World"。*#*
+
+    A. print(" ".join(l))
+    B. print(l.join(" "))
+    C. print(*l, sep=" ")
+    D. print(l)
+
+    正确答案：A,C
+
+*#*33. 关于Mako模板常用过滤器及其作用的描述，正确的是*#*
+
+    A. h: 进行 HTML 转义
+    B. u: 进行 unicode 编码
+    C. trim: 去掉首尾空白字符
+    D. n: 禁用所有默认过滤器
+
+    正确答案：A,C,D
+
+*#*34. 在 Mako 模板中，for 结构通过 loop 对象可获取循环的额外信息，以下哪些是 loop对象中可获取到的属性*#*
+
+    A. loop.index
+    B. loop.len
+    C. loop.odd
+    D. loop.even
+
+    正确答案：A,C,D
+
+*#*35. 以下哪些是Django的内建模板引擎？*#*
+
+    A. Mako
+    B. Jinja2
+    C. DjangoTemplates
+    D. Sphinx
+
+    正确答案：B,C
+
+*#*36. Django ORM进行多个条件同时满足的查询可采用哪种方式来组合查询条件？*#*
+
+    A. 在filter或get方法中将多个条件同时作为参数传入。
+    B. 在使用前一个条件的filter方法的返回结果对象上继续调用其filter方法并传入下一个条件，依次类推
+    C. 使用Q表达式的&运算符将条件组合起来。
+    D. 使用数据模型的fuzzy_search方法。
+
+    正确答案：A,B,C
+
+*#*37. 以下为Mako模板相关的Python代码片段，屏幕打印结果为
+from mako.template import Template
+tpl = Template("""
+<%
+    number = 1
+%>
+<%text filter="h">
+    <p>${number}</p>
+</%text>
+""")
+print tpl.render()
+*#*
+    A. <p>1</p>
+    B. <p>${number}</p>
+    C. &lt;p&gt;${number}&lt;/p&gt;
+    D. &lt;p&gt;1&lt;/p&gt;
+
+    正确答案：C
+
+*#*38. 以下说法正确的是：*#*
+
+    A. 通过POST方法提交form表单后，在View函数中可以通过request.POST获取到数据
+    B. 通过GET方法提交后，在View函数中可以通过request.GET获取到数据
+    C. request.GET和request.POST是类字典对象，可以使用for遍历数据
+    D. 可以通过request.body获取到raw POST数据
+
+    正确答案：A,B,C,D
+
+*#*39. Django ORM进行数据查询操作可使用数据模型的Objects属性的什么方法？*#*
+
+    A. filter()
+    B. get()
+    C. retrieve()
+    D. all()
+
+    正确答案：A,B,D
+
+*#*40. 通过Request的哪个属性可以判断请求方式是GET还是POST：*#*
+
+    A. method
+    B. Request
+    C. Schema
+    D. way
+
+    正确答案：A
+
+*#*41. 以下程序的输出结果是？
+x = [90,87,93]
+y = ["zhang", "wang","zhao"]
+print(list(zip(y,x)))
+*#*
+    A. ('zhang', 90), ('wang', 87), ('zhao', 93)
+    B. [('zhang', 90), ('wang', 87), ('zhao', 93)]
+    C. [['zhang', 90], ['wang', 87], ['zhao', 93]]
+    D. ['zhang', 90], ['wang', 87], ['zhao', 93]
+
+    正确答案：B
+
+*#*42. 关于Mako模板，以下哪些是合法的控制语句*#*
+
+    A. % if a > 0: ... % endif
+    B. % for i in range(5): ... % endif
+    C. % while number: ... % endwhile
+    D. % try: ... % except: ... % endtry
+
+    正确答案：A,C,D
+
+*#*43. 黑客在A网站上提交了一条评论，所有在A网站看到这条评论的人，都收到了一个中奖弹窗。有人点击这个中奖弹窗的按钮后，发现他的B网站资产被盗了。请问这其中可能利用了哪些漏洞？*#*
+
+    A. A网站的XSS漏洞
+    B. B网站的XSS漏洞
+    C. A网站的CSRF漏洞
+    D. B网站的CSRF漏洞
+
+    正确答案：A,D
+
+*#*44. 下列哪些方法是Django Models提供的数据查询、操作方法？*#*
+
+    A. get
+    B. push
+    C. filter
+    D. order_by
+
+    正确答案：A,C,D
+
+*#*45. 下列函数中，有哪些是Django中间件使用的函数？*#*
+
+    A. process_request
+    B. process_view
+    C. process_response
+    D. process_model
+
+    正确答案：A,B,C
+
+*#*46. Django的中间件可以在一次请求生命周期的哪些环节生效？*#*
+
+    A. 请求进入后，路由映射前
+    B. 路由映射后，进入视图函数前
+    C. 进入视图函数后，数据库查询前
+    D. 视图函数返回请求响应后
+
+    正确答案：A,B,D
+
+*#*47. 在ORM查询中，对于分数模型 Score，包含math_score, english_score, chinese_score, username 四个字段，
+如果以math_score优先，english_score为次优先进行排序？*#*
+
+    A. Score.objects.all().order_by('math_score').order_by('english_score')
+    B. Score.objects.all().order_by('english_score').order_by('math_score')
+    C. Score.objects.all().order_by('english_score', 'math_score')
+    D. Score.objects.all().order_by('math_score', 'english_score')
+
+    正确答案：D
+
+*#*48. 以下哪些选项可以得出UserInfo（用户模型）中surname（姓氏）为 zhao, qian, sun的查询集？*#*
+
+    A. UserInfo.objects.filter(surname__in=["zhao", "qian", "sun"])
+    B. UserInfo.objects.filter(Q(surname="zhao") | Q(surname="qian") |Q(surname="sun"))
+    C. UserInfo.objects.filter(reduce(operator._or, [Q(surname="zhao"),Q(surname="qian"), Q(surname="sun")]))
+    D. UserInfo.objects.filter(surname="zhao", surname="qian", surname="sun")
+
+    正确答案：A,B,C
+
+*#*49. 以下哪些是HTTP/1.1支持的请求方式？*#*
+
+    A. POST
+    B. DELETE
+    C. UPDATE
+    D. QUERY
+
+    正确答案：A,B
+
+*#*50. Django中间件支持的方法有？*#*
+
+    A. process_response
+    B. process_request
+    C. process_template_response
+    D. process_exception
+
+    正确答案：A,B,C,D
+
+*#*51. 以下代码在控制台的输出结果是？
+
+    [5,2,1,10,3].sort()
+*#*
+    A. [1, 2, 3, 5, 10]
+    B. [10, 5, 3, 2, 1]
+    C. [1, 10, 2, 3, 5]
+    D. [5, 3, 2, 10, 1]
+
+    正确答案：C
+
+*#*52. 关于HTTP协议的缓存机制，以下哪些headers 属于强制缓存*#*
+
+    A. If-Match
+    B. If-None-Match
+    C. Expires
+    D. Cache-Control
+
+    正确答案：C,D
+
+*#*53. 以下关于缓存的优先级的描述正确的是？*#*
+
+    A. Pragma > Cache-Control > Expires > ETag > Last-Modified
+    B. Pragma > Expires > Cache-Control > ETag > Last-Modified
+    C. Pragma > Cache-Control > Expires > Last-Modified > ETag
+    D. Pragma > Cache-Control > ETag > Expires > Last-Modified
+
+    正确答案：A
+
+*#*54. 关于Mako模板，以下哪些标签用于引入Python代码块*#*
+
+    A. <%block> </%block>
+    B. <% %>
+    C. <%def> </%def>
+    D. <%! %>
+
+    正确答案：B,D
+
+*#*55. 以下不属于前端缓存的是？*#*
+
+    A. Cookie
+    B. localStorage
+    C. Session
+    D. indexDB
+
+    正确答案：C
+
+*#*56. 以下表达式的值结果为 True 的是？*#*
+
+    A. undefined == null
+    B. undefined === null
+    C. NaN == NaN
+    D. true == 1
+
+    正确答案：A,D
+
+*#*57. 以下哪些不是 JavaScript 的原始数据类型？*#*
+
+    A. Undefined
+    B. Object
+    C. Symbol
+    D. Array
+
+    正确答案：B,D
+
+*#*58. 以下代码在控制台的输出结果是？
+
+    const promise1 = () => Promise.reject(1);
+
+    const promise2 = () => Promise.reject(2);
+
+    Promise.all([promise1(), promise2()]).catch((err) => {
+        console.log(err);
+    });
+*#*
+
+    A. 1
+    B. 2
+    C. [1, 2]
+
+    正确答案：A
+
+*#*59. 以下是一段Mako模板渲染代码逻辑，其执行输出结果为
+
+    from mako.template import Template
+
+    tpl = Template('${" test mako "|trim, u}')
+
+    print tpl.render()
+*#*
+    A. +test+mako+
+    B. test+mako
+    C. test mako
+    D. 执行报错
+
+    正确答案：B
+
+*#*60. 以下代码在控制台的输出结果是？
+
+    const way = async () => console.log('1');
+
+    const fun = async () => {
+        console.log('2');
+        await way();
+        console.log('3');
+    };
+
+    fun();
+
+    new Promise((resolve) => {
+        console.log('4'); resolve();
+    }).then(() => console.log('5'));
+*#*
+    A. 2 1 4 3 5
+    B. 2 4 1 5 3
+    C. 2 1 4 5 3
+
+    正确答案：A
+
+*#*61. 以下是一段Mako模板渲染代码逻辑，其执行输出结果为
+    from mako.template import Template
+
+    tpl = Template('${" test mako "|u,trim}')
+
+    print tpl.render()
+*#*
+    A. +test+mako+
+    B. test+mako
+    C. test mako
+    D. 执行报错
+
+    正确答案：A
+
+*#*62. 以下关于浏览器同源策略（跨域）描述错误的是？*#*
+
+    A. 通过 script 标签引用的资源通常不受同源策略限制
+    B. 使用 window.fetch 默认可以跨域
+    C. 只要域名和端口相同就可以跨域
+    D. sessionStorage 存取数据不受同源策略限制
+
+    正确答案：B,C,D
+
+*#*63. 以下代码中的输出结果是？
+
+    const arr = [9, 6, 17, 10, 23];
+
+    const result = arr.find(num => num > 12);
+
+    console.log(result);
+*#*
+    A. [17]
+    B. 17
+    C. [17, 23]
+
+    正确答案：B
+
+*#*64. 以下代码中的输出结果是？
+
+    const promise1 = new Promise(function (resolve, reject) {
+        setTimeout(function() {
+            resolve('foo');
+        }, 300);
+    });
+
+    promise1.then(function () {
+        return 'bar';
+    }).then(function (value) {
+        console.log('hi,' + value); // 输出结果？
+    })
+*#*
+    A. "hi,bar"
+    B. "hi,foo"
+    C. "hi,undefined"
+    D. "hi,"
+
+    正确答案：A
+
+*#*65. 以下代码中两处的输出结果分别是？
+
+    const target = { a: 1, b: 2 };
+
+    const source = { b: 4, c: 5 };
+
+    const foo = Object.assign(target, source);
+
+    console.log(foo);
+
+    console.log(target);
+
+*#*
+    A. undefined, { a: 1, b: 2 }
+    B. {a: 1, b: 4, c: 5}, {a: 1, b: 2}
+    C. {a: 1, b: 4, c: 5}, {a: 1, b: 4, c: 5}
+    D. undefined, {a: 1, b: 4, c: 5}
+
+    正确答案：C
+
+*#*66. def empty(d):
+    xxxxx
+
+  设计一个函数来清空一个字典,以下合适填入空行的是?
+*#*
+    A. for i in d:del d[i]
+    B. d.clear()
+    C. d = {}
+    D. del d
+
+    正确答案：B
+
+*#*67. 以下代码中的输出结果是？
+
+    const numbers = [1, 2, 3];
+
+    const result = numbers.map(Math.pow);
+
+    console.log(result);
+*#*
+    A. [1, 2, 9]
+    B. [1, 4, 9]
+    C. [NaN, NaN, NaN]
+    D. 报错，无法正确运行
+
+    正确答案：A
+
+*#*68. 以下代码中两处的输出结果分别是？
+
+    const arr = ['a', 'b', 'c'];
+
+    const foo = arr.splice(2, 1, 'd');
+
+    console.log(foo);
+
+    console.log(arr);
+*#*
+    A. undefined, ["a", "b", "d"]
+    B. ["c"], ["a", "b", "d"]
+    C. "c", ["a", "b", "d"]
+    D. "d", ["a", "b"]
+
+    正确答案：B
+
+*#*69. 以下代码中的输出结果是？
+
+    const arr = ['a', 'b', 'c'];
+
+    console.log(arr[4]);
+*#*
+    A. null
+    B. undefined
+    C. false
+    D. 报错，无法正确运行
+
+    正确答案：B
+
+*#*70. 以下关于 Cookie 和 localStorage 的描述，错误的是？*#*
+
+    A. 两者都可以设置存放数据的过期时间
+    B. 两者存放的数据默认都会传递到服务器端
+    C. localStorage 可存放的数据比 Cookie 更大
+    D. localStorage 可以访问存放在其它域名下的数据而 Cookie 不可以
+
+    正确答案：A,B,D
+
+*#*71. 获取浏览器当前URL中的请求参数部分，以下方法正确的是？*#*
+
+    A. location.search
+    B. location.query
+    C. history.query
+    D. window.search
+
+    正确答案：A
+
+*#*72. 使浏览器后退到前一个网址，以下方法错误的是？*#*
+
+    A. history.back()
+    B. history.go(-1)
+    C. history.go(1)
+    D. navigator.go(-1)
+
+    正确答案：C,D
+
+*#*73. 获取浏览器客户端的 Cookie，以下方法正确的是？*#*
+
+    A. window.cookie
+    B. document.cookie
+    C. browser.cookie
+
+    正确答案：B
+
+*#*74. 获取浏览器客户端的 userAgent，以下方法正确的是？*#*
+
+    A. window.userAgent
+    B. history.userAgent
+    C. document.userAgent
+    D. navigator.userAgent
+
+    正确答案：D
+
+*#*75. 获取当前网页的域名，以下方法正确的是？*#*
+
+    A. window.domain
+    B. location.domain
+    C. document.domain
+
+    正确答案：C
+
+*#*76. 在浏览器全局环境中，以下代码中的输出结果分别是？
+
+    var age = 18;
+    console.log(this.age) // 1
+
+    const Person = {
+        age: 20,
+        say () {
+            console.log(this.age) // 2
+        },
+        run () {
+            return function () {
+                console.log(this.age); // 3
+            }
+        },
+        sleep () {
+            return () => console.log(this.age); // 4
+        }
+    }
+
+    Person.say();
+
+    Person.run()();
+
+    Person.sleep()();
+*#*
+    A. undefined, 18, 20, 18
+    B. 18, 20, 18, 20
+    C. 18, 20, 20, 20
+    D. 18, 20, 18, undefined
+
+    正确答案：B
+
+*#*77. 以下命令可以通过Django的Migrations文件生成SQL文件？*#*
+
+    A. django-admin sqlmigrate migration_name app_label
+    B. django-admin migratesql migration_name app_label
+    C. python manage.py migratesql app_label migration_name
+    D. python manage.py sqlmigrate app_label migration_name
+
+    正确答案：D
+
+*#*78. 以下代码中的输出结果是？
+
+    const result = '123abc456'.replace(/(\d+)\w+/, '$1');
+    console.log(result);
+*#*
+    A. "$1"
+    B. "123"
+    C. "$abc456"
+    D. "abc"
+
+    正确答案：B
+
+*#*79. 以下3个表达式的结果分别是？
+
+        0 === '0'
+
+        '0' == false
+
+        1 === true
+*#*
+    A. false, true, false
+    B. true, true, false
+    C. false, false, true
+    D. true, true, true
+
+    正确答案：A
+
+*#*80. 以下代码的运行结果是？（其中 $ 为 jQuery）
+
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>1</li>
+    </ul>
+
+    <script>
+        $('#ul1 li:eq(1)').appendTo('#ul2');
+        console.log($('#ul1 li').length);
+        console.log($('#ul2 li').length);
+    </script>
+*#*
+    A. 依次输出 3 2
+    B. 依次输出 2 2
+    C. 依次输出 3 1
+    D. 依次输出 3 3
+
+    正确答案：B
+
+*#*81. Python中的整型最大值是多少*#*
+
+    A. 9223372036854775807(2的63次幂减1)
+    B. 2147483647(2的31次幂减1)
+    C. 和操作系统相关
+    D. 没有上限
+
+    正确答案：A
+
+*#*82. 以下代码的运行结果，依次输出的是？
+
+    function foo () {
+        let i = 0;
+        return () => console.log(i++);
+
+    const gen = foo();
+
+    gen();
+
+    gen();
+
+    gen();
+*#*
+    A. 0 undefined undefined
+    B. 1 2 3
+    C. 0 0 0
+    D. 0 1 2
+
+    正确答案：D
+
+*#*83. 以下代码中的输出结果是？
+
+    var foo = bar || 0;
+
+    var bar = 1;
+
+    console.log(foo);
+*#*
+    A. 0
+    B. 1
+    C. undefined
+    D. 报错，无法正确运行
+
+    正确答案：A
+
+*#*84. 以下代码的运行结果是？
+
+    for (var i = 0; i < 5; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 1);
+    }
+*#*
+    A. 输出 0 五次
+    B. 依次输出 0 1 2 3 4
+    C. 输出 5 五次
+    D. 报错，无法正确运行
+
+    正确答案：C
+
+*#*85. 以下代码的运行结果是？
+
+    function foo () {
+        console.log(bar) // 结果？
+        let bar = 1;
+    }
+    foo();
+*#*
+    A. undefined
+    B. 1
+    C. null
+    D. ReferenceError: bar is not defined
+
+    正确答案：D
+
+*#*86. parseInt(10, 8) 的结果是？*#*
+
+    A. 2
+    B. 10
+    C. 8
+    D. NaN
+
+    正确答案：C
+
+*#*87. 使用 jQuery 判断页面中元素存在的方法，正确的是？（其中 $ 为 jQuery）*#*
+
+    A. $(selector) === true
+    B. $(selector) !== null
+    C. $(selector) > 0
+    D. $(selector).length > 0
+
+    正确答案：D
+
+*#*88. 以下代码，第二个 div 标签的宽度是？
+
+    <style type="text/css">
+        .container { width: 500px; height: 500px; }
+        .div-1 { float:left; width: 100px; }
+        .div-2 { overflow: hidden; }
+    </style>
+
+    <section class="container">
+        <div class="div-1"></div>
+        <div class="div-2"></div>
+    </section>
+*#*
+    A. 0px
+    B. 100px
+    C. 400px
+    D. 500px
+
+    正确答案：C
+
+*#*89. 以下 CSS 结果实现哪个箭头？
+
+    <style type="text/css">
+        .arrows {
+            border-width: 5px 5px 5px 0;
+            border-right-color: #000;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+    </style>
+*#*
+    A. 上箭头
+    B. 下箭头
+    C. 左箭头
+    D. 右箭头
+
+    正确答案：C
+
+*#*90. 下面哪些方法可以消除设置了display:inline-block的产生横排效果的li之间的空白间隔*#*
+
+    A. 将 li 代码全部写在一排
+    B. 浮动 li，使用 float: left
+    C. 2个 li 标签增加换行
+    D. li 标签增加 display：block 样式
+
+    正确答案：A,B
+
+*#*91. 下列哪些是可继承的 CSS 属性？*#*
+
+    A. border
+    B. visibility
+    C. font
+    D. color
+
+    正确答案：B,C,D
+
+*#*92. Python 中关于 for 循环和 while 循环错误的是?*#*
+
+    A. 相同条件下 while 循环比 for 循环多执行一次
+    B. for 循环只能用于可迭代对象
+    C. while 循环相比 for 循环更慢
+    D. for 循环可以加 else 语句块而 while 循环不能
+
+    正确答案：A,D
+
+*#*93. CSS 中关于 box-sizing 的属性值 content-box 和 border-box，描述正确的是？*#*
+
+    A. border-box：定义的元素 width 仅包括内容的宽，不包括边框、内边距、外边距
+    B. border-box：定义的元素 width 包括内容的宽，内边距和边框，但不包括外边距
+    C. content-box：定义的元素 width 仅包括内容的宽，不包括边框、内边距、外边距
+    D. content-box 是默认值
+
+    正确答案：B,C,D
+
+*#*94. 以下具有最高优先级的样式定义是？*#*
+
+    A. 外部样式表（使用 link 标签引入）
+    B. 内部样式表（位于 head 标签内部）
+    C. 浏览器默认样式
+    D. 内联样式（在 HTML 元素内部）
+
+    正确答案：D
+
+*#*95. h1 { padding: 8px 0 16px 30px; }，则 h1 的内边距分别是？*#*
+
+    A. 上 8px、右 0px、下 16px、左 30px
+    B. 右 8px、下 0px、左 16px、上 30px
+    C. 下 8px、左 0px、上 16px、右 30px
+    D. 左 8px、下 0px、右 16px、上 30px
+
+    正确答案：A
+
+*#*96. 如下代码，p 标签之间的垂直间距是？
+
+    <style type="text/css">
+        p { margin: 10px 15px; }
+    </style>
+
+    <div>
+        <p>p1</p>
+        <p>p2</p>
+        <p>p2</p>
+    </div>
+*#*
+    A. 10px
+    B. 15px
+    C. 20px
+    D. 30px
+
+    正确答案：A
+
+*#*97. 同时定义 h1 和 p 的文字大小为 14px，以下正确的是？*#*
+
+    A. h1 + p { font-size: 14px; }
+    B. h1, p { font-size: 14px; }
+    C. h1 & p { font-size: 14px; }
+    D. h1 p { font-size: 14px; }
+
+    正确答案：B
+
+*#*98. 以下哪些是在 CSS3 中新增的 display 属性值？*#*
+
+    A. table
+    B. flex
+    C. grid
+    D. list-item
+
+    正确答案：B,C
+
+*#*99. CSS 中可用于定义动画的属性，以下正确的是？*#*
+
+    A. animation
+    B. transform
+    C. transition
+    D. box-shadow
+
+    正确答案：A,C
+
+*#*100. 如下代码，对实现效果描述正确的是？
+
+    <style type="text/css">
+        ul { display: flex; }
+        ul li { flex: 1; }
+    </style>
+
+    <ul>
+        <li>Content 1</li>
+        <li>Content 2</li>
+        <li>Content 3 is longer</li>
+        <li>Content 4</li>
+    </ul>
+*#*
+    A. li 元素沿水平方向、等宽排列
+    B. li 元素沿水平方向、非等宽排列
+    C. li 元素沿垂直方向、等宽排列
+    D. li 元素沿垂直方向、非等宽排列
+
+    正确答案：A
+
+*#*101. 如下代码，对实现效果描述正确的是？
+
+    <style type="text/css">
+        .box { display: flex; align-items: center; }
+        .box div { width: 100px; height: 100px; }
+    </style>
+
+    <section class="box">
+        <div>div</div>
+    </section>
+*#*
+    A. div 元素在 .box 容器中水平与垂直方向居中
+    B. div 元素在 .box 容器中仅垂直方向居中
+    C. div 元素在 .box 容器中仅水平方向居中
+    D. div 元素在 .box 容器中水平与垂直方向都不居中
+
+    正确答案：B
+
+*#*102. 如下代码，p1、p2、p3文字颜色分别是？
+
+    <style type="text/css">
+        p { color: black; }
+        div + p { color: blue; }
+        div p { color: red; }
+    </style>
+    <div>
+        <p>p1</p>
+    </div>
+    <p>p2</p>
+    <p>p3</p>
+*#*
+    A. black、blue、red
+    B. blue、black、red
+    C. red、blue、black
+    D. red、black、blue
+
+    正确答案：C
+
+*#*103. 使网页中文字加粗显示，以下方法中正确的是？*#*
+
+    A. 使用 strong 标签
+    B. font-weight: 700;
+    C. 使用 b 标签
+    D. font-weight: bold;
+
+    正确答案：A,B,C,D
+
+*#*104. 下面哪些是 Django 字段查找中的合法操作符*#*
+
+    A. exact
+    B. iexact
+    C. lte
+    D. istartswith
+
+    正确答案：A,B,C,D
+
+*#*105. 以下代码，在默认情况下 h1 和 p 标签的文字大小正确的是？
+    <style type="text/css">
+        html { font-size: 16px; }
+        section { font-size: 18px; }
+        article { font-size: 20px; }
+        article h1 { font-size: .9em; }
+        article p { font-size: 1rem; }
+    </style>
+    <section>
+        <article>
+            <h1>title</h1>
+            <p>content</p>
+        <article>
+    <section>
+*#*
+    A. h1 18px、p 16px
+    B. h1 20px、p 18px
+    C. h1 18px、p 18px
+    D. h1 16px、p 20px
+
+    正确答案：A
+
+*#*106. 以下对返回值类型判断错误的是(id=1的记录是存在的)*#*
+
+    A. Students.objects.get(id=1) 返回 Students 类型
+    B. Students.objects.filter() 返回 django.db.models.query.QuerySet 类型
+    C. Students.objects.filter(id=1).first() 返回 Students 类型
+    D. Students.objects.filter().values_list('id') 返回 list 类型
+
+    正确答案：D
+
+*#*107. 以下代码，当网页的宽度为 860px 时 header 的高度值正确的是？
+
+    <style type="text/css">
+        header {
+             height: 60px;
+        }
+        @media (min-width: 800px) {
+             header { height: 80px; }
+        }
+        @media (max-width: 1199px) and (min-width: 992px) {
+                header { height: 70px; }
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+             header { height: 90px; }
+        }
+    </style>
+
+    <body>
+         <header>header</header>
+    </body>
+*#*
+    A. 60px
+    B. 80px
+    C. 70px
+    D. 90px
+
+    正确答案：D
+
+*#*108. 使用 CSS 方法实现子元素相对父元素对齐，父元素的 position 属性值不能设置为下列哪些值？*#*
+
+    A. absolute
+    B. relative
+    C. static
+    D. unset
+
+    正确答案：C,D
+
+*#*109. 下列哪些不是 HTML5 新增标签？*#*
+
+    A. nav
+    B. sidebar
+    C. section
+    D. list
+
+    正确答案：B,D
+
+*#*110. 下列哪个 CSS 选择器可以实现选择表格的第4、7、10行？*#*
+
+    A. tr:nth-child(3n+4)
+    B. tr:nth-child(2n+3)
+    C. tr:nth-child(1n+4)
+    D. tr:nth-child(3n+1)
+
+    正确答案：A
+
+*#*111. 下列 CSS 方法中去掉链接下划线，正确的是？*#*
+
+    A. a { text-decoration: 0; }
+    B. a { text-decoration: none; }
+    C. a { text-underline: none; }
+    D. a { text-underline: 0; }
+
+    正确答案：B
+
+*#*112. 以下哪些是 DDoS 攻击的常见防御方式*#*
+
+    A. 在服务器端对比 POST 提交参数的 Token 与 Session 中绑定的 Token 是否一致
+    B. 合理利用 CDN 和镜像站点分流缓解主站压力
+    C. 限制每个IP的请求频率
+    D. 合理利用 memcache 等分布式缓存转移数据库压力
+
+    正确答案：B,C,D
+
+*#*113. 以下关于Django CSRF的描述错误的是?*#*
+
+    A. Django项目中默认启用了CSRF保护,每次请求时通过CSRF中间件检查请求中是否有正确
+    B. CSRF主要依靠站点服务端返回脚本，在客户端触发执行从而发起Web攻击
+    C. 对于需要CSRF保护的函数，我们一般使用csrf_exempt装饰器进行处理
+    D. CSRF是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作
+
+    正确答案：B,C
+
+*#*114. Python 中有哪些是可变类型？*#*
+
+    A. tuple
+    B. list
+    C. dict
+    D. set
+
+    正确答案：B,C,D
+
+*#*115. 以下哪些是Django的admin模块的ModelAdmin类默认支持的属性？*#*
+
+    A. list_display
+    B. list_filter
+    C. search_fields
+    D. raw_id_fields
+
+    正确答案：A,B,C,D
+
+*#*116. Python垃圾回收机制有哪些？*#*
+
+    A. 引用计数
+    B. 分代技术
+    C. 标记-清除机制
+    D. Copying算法
+
+    正确答案：A,B,C
+
+*#*117. 以下哪条命令将回退所有migrate版本*#*
+
+    A. python manage.py migrate polls zero
+    B. python manage.py migrate --fake-initial
+    C. python manage migrate polls --fake
+    D. python manage.py makemigrations polls
+
+    正确答案：A
+
+*#*118. 小明想从字符串 s = 'name: (xiaoming) age: (32)' 中提取里面的年龄 32。以下哪一个做法可以拿到结果：*#*
+
+    A. re.search(r'(.*)', s).group(1)
+    B. re.search(r'\((.*?)\)', s).group(1)
+    C. re.search(r'\((.*?)\)', s).group(2)
+    D. re.findall(r'\((.*?)\)', s)[1]
+
+    正确答案：D
+
+*#*119. Django1.11版本下，以下哪些方法是 Django 中间件提供的钩子方法*#*
+
+    A. process_view
+    B. process_exception
+    C. process_template_response
+    D. process_middleware_exception
+
+    正确答案：A,B,C
+
+*#*120. 以下哪条命令可以将数据表生成Django的model类*#*
+
+    A. python manage.py sqlmigrate db_name table_name
+    B. python manage.py inspectdb --database db_name table_name
+    C. python manage.py makemigrations db_name table_name
+    D. python manage.py showmigrations db_name table_name
+
+    正确答案：B
+
+*#*121. 如果想使用 Python 实现一个单例模式，有哪几种可能的做法？*#*
+
+    A. 使用 __new__ 方法
+    B. 使用 __init__ 方法
+    C. 封装一个判断装饰器
+    D. 使变量作为 module import 进来
+
+    正确答案：A,C,D
+
+*#*122. 下面的代码随着循环会导致什么情况?
+
+    def test(num):
+        str = "test"
+        for i in range(num):
+            str += "x"
+        return str
+*#*
+    A. 内存增加
+    B. 内存减少
+    C. 内存不变
+    D. 增长一段时间触发gc后变少
+
+    正确答案：A
+
+*#*123. 关于 Python 函数参数，以下说法错误的是：*#*
+
+    A. 函数可以不接收任何参数
+    B. 函数不能接受可变长度的参数
+    C. 函数参数可以设置默认值
+    D. 函数可以先接收关键字参数，然后接收位置参数
+
+    正确答案：B,D
+
+*#*124. 以下哪些模板语言可以在服务端与 Django 完成页面渲染*#*
+
+    A. JSP
+    B. Jinja2
+    C. Mako
+    D. artTemplate
+
+    正确答案：B,C
+
+*#*125. 下面语句中，能够正确的进入数据库事务的是：*#*
+
+    A. @transaction.non_atomic_requests
+    B. @transaction.atomic
+    C. with transaction.atomic():
+    D. with transaction.non_atomic_requests():
+
+    正确答案：B,C
+
+*#*126. print({x: 'item'+str(x**2) for x in (2, 4, 6)}) 输出什么?*#*
+
+    A. [2, 'item4', 4, 'item16', 6, 'item36']
+    B. {2: 'item4', 4: 'item16', 6: 'item36'}
+    C. {2, 4, 6}
+    D. {'item4', 'item16', 'item36'}
+
+    正确答案：B
+
+*#*127. 在Python中，函数参数支持的类型有？*#*
+
+    A. 位置参数
+    B. 默认值参数
+    C. 关键字参数
+    D. 可变长度参数
+
+    正确答案：A,B,C,D
+
+*#*128. 在Django中初始化数据的方法有哪些？*#*
+
+    A. 通过新建Migrations文件初始化
+    B. 通过SQL初始化
+    C. 通过dumpdata/loaddata进行初始化
+    D. 通过post_migrate信号句柄进行初始化
+
+    正确答案：A,B,C,D
+
+*#*129. 下面哪些方法能够在 Django 测试用例运行前进行数据初始化*#*
+
+    A. setUp
+    B. preSet
+    C. setUpClass
+    D. preClassSet
+
+    正确答案：A,C
+
+*#*130. 如何使用 ORM 实现以下查询
+
+    SQL，SELECT * FROM order WHERE id BETWEEN 20 AND 100 AND (num <= 20 or num >= 30);*#*
+
+    A. Order.objects.filter(id__gt=20, id__lt=100).filter(Q(num<=20) | Q(num>=30))
+    B. Order.objects.filter(id__gt=20, id__lt=100).filter(Q(num__lte=20) ||Q(num__gte=30))
+    C. Order.objects.filter(Q(id__gt=20) & Q(id__lt=100)).filter(Q(num__lte=20) |Q(num__gte=30))
+    D. Order.objects.filter(Q(id__gt=20) && Q(id__lt=100)).filter(Q(num__lte=20) ||Q(num__gte=30))
+
+    正确答案：C
+
+*#*131. Python 文件只读打开模式是*#*
+
+    A. w
+    B. x
+    C. r
+    D. b
+
+    正确答案：C
+
+*#*132. 下面关于 Django 信号描述错误的是？*#*
+
+    A. Django内置了一个信号分发器。
+    B. 信号可以帮助解耦程序模块。
+    C. 信号允许某些 senders 通知一组 receivers 已经发生的行为。
+    D. Django 信号是异步的。
+
+    正确答案：D
+
+*#*133. 以下哪个 Python 模块经常被用来做字符串处理？*#*
+
+    A. os
+    B. sys
+    C. re
+    D. contextlib
+
+    正确答案：C
+
+*#*134. Django项目中需要注意哪些安全问题？*#*
+
+    A. SQL注入
+    B. XSS攻击
+    C. 跨站请求伪造攻击
+    D. 点击防护
+
+    正确答案：A,B,C,D
+
+*#*135. 下面表达式运算结果正确的是？
+
+    4 ^ 12
+*#*
+    A. 2
+    B. 4
+    C. 8
+    D. 12
+
+    正确答案：C
+
+*#*136. Django 原生提供了哪些维度的缓存？*#*
+
+    A. 整站缓存
+    B. 视图层缓存
+    C. 模板片段缓存
+    D. redis 缓存
+
+    正确答案：A,B,C
+
+*#*137. 一个列表a = [1, 3, 5, 7, 9], 它的切片操作a[::-2]的结果是*#*
+
+    A. [9, 7, 5]
+    B. [7, 3]
+    C. [9, 5, 1]
+    D. [7,]
+
+    正确答案：C
+
+*#*138. 默认的Django数据库引擎支持哪些数据库？*#*
+
+    A. Mysql
+    B. Mongodb
+    C. Sqlite
+    D. Postgresql
+
+    正确答案：A,C,D
+
+*#*139. 以下代码的运行后，说法正确的是？
+
+    class student:
+
+        def __init__(self):
+            self.marks = 97
+            self.__cgpa = 8.7
+
+        def display(self):
+            print(self.marks)
+
+    obj=student()
+
+    print(obj._student__cgpa)
+*#*
+    A. 程序运行正常，打印出8.7
+    B. 错误，因为私有类成员无法访问
+    C. 错误，因为名称修改的正确语法尚未实现
+    D. 程序运行正常但没有打印
+
+    正确答案：A
+
+*#*140. 关于 Django 的 MVC 模式描述正确的是*#*
+
+    A. 模型( Model )，数据存取层：处理与数据相关的所有事务，即如何存取、如何验证有效性、包含哪些行为以及数据之间的关系等
+    B. 模板( Template )，表现层：处理与表现相关的决定，即如何在页面或其他类型文档中进行显示。
+    C. 视图( View )，业务逻辑层：存取模型及调取恰当模板的相关逻辑。模型与模板之间的桥梁。
+    D. 对比 MVC 模式 ，Django 的 URLconf 属于 controller 部分
+
+    正确答案：A,B,C,D
+
+*#*141. 以下代码执行的输出是什么？
+
+    x = 2
+
+    for i in range(x):
+        x -= 2
+        print (x)
+*#*
+    A. 0 1 2 3 4 …
+    B. 0 -2
+    C. 0
+    D. error
+
+    正确答案：B
+
+*#*142. 以下哪些方法是Django中间件的默认方法？*#*
+
+    A. process_request
+    B. process_exception
+    C. process_pre
+    D. process_post
+
+    正确答案：A,B
+
+*#*143. 以下哪个命令可以进入带有Django环境的Python交互环境？*#*
+
+    A. python manage.py runserver
+    B. python manage.py runshell
+    C. python manage.py shell
+    D. python manage.py getshell
+
+    正确答案：C
+
+*#*144. 以下哪个命令用于生成Django数据库变更文件？*#*
+
+    A. python manage.py makemigrations
+    B. python manage.py help
+    C. python manage.py runserver
+    D. python manage.py shell
+
+    正确答案：A
+
+*#*145. 以下哪个命令是Django用于应用数据库变更的？*#*
+
+    A. python manage.py shell
+    B. python manage.py runserver
+    C. python manage.py migrate
+    D. python manage.py makemigrations
+
+    正确答案：C
+
+*#*146. 有一张 UserInfo 表，需要过滤出姓名(username) 为 xiaoming，性别(sex) 为 male 的数据，
+    假设只有一条数据符合条件，以下哪些语法是正确的？*#*
+
+    A. UserInfo.objects.get(username=xiaoming, sex=male)
+    B. UserInfo.objects.get(username=xiaoming).get(sex=male)
+    C. UserInfo.objects.filter(username=xiaoming, sex=male)
+    D. UserInfo.objects.filter(username=xiaoming).filter(sex=male)
+
+    正确答案：A,C,D
+
+*#*147. 在Django视图函数中，能从'request'中获取到的以下哪些对象？*#*
+
+    A. META
+    B. REQUEST
+    C. FILES
+    D. session
+
+    正确答案：A,B,C,D
+
+*#*148. Django的数据库建模中，支持的外键类型都有哪些？*#*
+
+    A. ForeignKey
+    B. OneToOneField
+    C. ManyToOneField
+    D. ManyToManyField
+
+    正确答案：A,B,D
+
+*#*149. 以下哪些是方法是Django中ORM的Manager的方法？*#*
+
+    A. filter
+    B. annotate
+    C. all
+    D. prefetch_related
+
+    正确答案：A,B,C,D
+
+*#*150. 标准运维中，通过开发自定义原子可以实现以下哪些场景的需求？*#*
+
+    A. 通过API购买腾讯云服务
+    B. 访问蓝鲸SaaS数据库
+    C. ping某个网站是否可以访问
+    D. 拉取有权限的仓库代码
+
+    正确答案：A,B,C,D
+
+*#*151. 原子开发的后端配置必须定义哪些属性？*#*
+
+    A. name
+    B. code
+    C. bound_service
+    D. form
+
+    正确答案：A,B,C,D
+
+*#*152. 以下哪些原子自定义正则校验规则可以保证输入值不能为空？*#*
+
+    A. /^.*$/
+    B. /^.+$/
+    C. /^[abc]*$
+    D. /^\d{1,8}$/
+
+    正确答案：B,D
+
+*#*153. 标准运维中，原子开发的表单配置必须定义哪些属性？*#*
+
+    A. tag_code
+    B. type
+    C. items
+    D. name
+
+    正确答案：A,B,D
+
+*#*154. 标准运维中，原子开发的表单支持以下哪些前端校验？*#*
+
+    A. 必填校验
+    B. 字符长度校验
+    C. 纯数字校验
+    D. IP属于当前业务校验
+
+    正确答案：A,B,C,D
+
+*#*155. 以下哪些属于常见的 DDoS 攻击类型*#*
+
+    A. DNS Query Flood
+    B. ICMP Flood
+    C. SYN Flood
+    D. HTTP Get Flood
+
+    正确答案：A,B,C,D
+
+*#*156. 开发一个安全的文件上传接口，以下做法正确的是*#*
+
+    A. 文件上传目录设置为不可执行
+    B. 对用户上传的文件类型及大小进行限制
+    C. 将用户上传的文件以原文件名保存于服务器
+    D. 单独设置文件服务器的域名
+
+    正确答案：A,B,D
+
+*#*157. 下面关于 RSA 算法的描述，正确的是*#*
+
+    A. RSA 的执行效率比 AES 高
+    B. RSA 的安全性依赖于大数分解
+    C. RSA 是非对称加密算法
+    D. TLS/SSL 协议中 RSA 的公钥长度一般为 256 位或 512 位
+
+    正确答案：B,C
+
+*#*158. 以下哪些算法是可逆的*#*
+
+    A. DES
+    B. SHA
+    C. RSA
+    D. BASE64
+
+    正确答案：A,C,D
+
+*#*159. 在Web开发中，以下哪些是不安全的行为*#*
+
+    A. 调用第三方敏感接口，没有校验权限
+    B. 开发人员为了方便定位问题，通过URL的方式开通操作后门
+    C. 后台对用户提交的表单数据进行转义
+    D. 测试环境与正式环境共享数据
+
+    正确答案：A,B,D
+
+*#*160. 关于HTTP和HTTPS，下面说法正确的是*#*
+
+    A. HTTPS 属于传输层协议，用来保证数据传输安全
+    B. HTTPS 不仅比 HTTP 安全，而且连接效率更高
+    C. HTTPS 使用了非对称加密技术，比 HTTP 安全性更高
+    D. HTTP 是明文传输，而 HTTPS 是密文传输
+
+    正确答案：C,D
+
+*#*161. 以下哪些是对称加密算法*#*
+
+    A. RSA
+    B. DES
+    C. SHA1
+    D. AES
+
+    正确答案：B,D
+
+*#*162. 关于SQL注入攻击的防范，以下说法正确的是*#*
+
+    A. 为每个应用使用单独的权限有限的数据库连接
+    B. 使用 Django ORM 即可完全避免 SQL注入攻击
+    C. 返回到前端的错误信息，使用自定义的错误信息对原始错误信息进行包装
+    D. 通过正则表达式对用户的输入进行校验
+
+    正确答案：A,C,D
+
+*#*163. 关于敏感信息的存取，以下哪些做法是正确的*#*
+
+    A. 使用 AES 加密算法加密存储 QQ 和手机号
+    B. 后台接口明文返回身份证号、银行卡号等字段信息
+    C. 将数据库账号和密码存储在代码配置中
+    D. 对于存储敏感信息的DB，限制其访问来源IP
+
+    正确答案：A,D
+
+*#*164. 以下哪些配置文件影响Linux下的域名解析*#*
+
+    A. /etc/nsswitch.conf
+    B. /etc/hosts
+    C. /etc/resolv.conf
+    D. /etc/networks
+
+    正确答案：A,B,C
+
+*#*165. CentOS中如何查询某个文件属于哪个rpm包*#*
+
+    A. rpm -ql 
+    B. rpm -qf
+    C. rpm -qa
+    D. rpm -qd
+
+    正确答案：B
+
+*#*166. CentOS7上，将一个服务设为开机启动有哪几种方式*#*
+
+    A. systemctl enable xxxx
+    B. chkconfig xxxx on
+    C. /etc/bashrc添加启动命令
+    D. /etc/rc.local添加启动命令
+
+    正确答案：A,B,D
+
+*#*167. DNS默认使用哪个端口通信*#*
+
+    A. 21
+    B. 22
+    C. 53
+    D. 123
+
+    正确答案：C
+
+*#*168. 在Bash脚本中，"$$" 代表*#*
+
+    A. 父进程PID
+    B. 当前进程PID
+    C. 参数列表
+    D. 返回码
+
+    正确答案：B
+
+*#*169. Linux使用以下哪个命令设置防墙规则*#*
+
+    A. ipsec
+    B. ipfw
+    C. iptables
+    D. route
+
+    正确答案：C
+
+*#*170. 以下哪个命令可以查看网卡的流量*#*
+
+    A. dig
+    B. ip
+    C. route
+    D. sar
+
+    正确答案：D
+
+*#*171. kill -0 2345（某pid）命令的返回码为非0， 原因可能是*#*
+
+    A. 该pid的进程不存在
+    B. 该用户没有该pid的进程的权限
+    C. 该pid的进程无法退出
+    D. 该pid的进程正在睡眠中
+
+    正确答案：A,B
+
+*#*172. 在命令 some_command >log 2>/dev/null中，数字2代表*#*
+
+    A. 标准输入
+    B. 标准输出
+    C. 标准错误
+    D. 标准警告
+
+    正确答案：C
+
+*#*173. 以下关于kill命令的描述正确的有*#*
+
+    A. SIGKILL可以被捕获
+    B. kill默认发送的是SIGTERM信号
+    C. SIGHUP信号的默认操作是终止进程
+    D. SIGQUIT信息的的默认操作是终止进程
+
+    正确答案：B,C,D
+
+*#*174. 蓝鲸支持哪几种微信消息组件*#*
+
+    A. 微信企业号
+    B. 企业微信
+    C. 短信
+
+    正确答案：A,B
+
+*#*175. 蓝鲸默认提供了哪些平台的API？*#*
+
+    A. 蓝鲸作业平台
+    B. 蓝鲸配置平台
+    C. 标准运维
+    D. 蓝鲸统一登录
+
+    正确答案：A,B,C,D
+
+*#*176. API网关支持几种对接方式？*#*
+
+    A. 1
+    B. 2
+    C. 3
+    D. 4
+
+    正确答案：B
+
+*#*177. 蓝鲸开发框架集成了哪些Web安全防护策略？*#*
+
+    A. XSS攻击（跨站脚本攻击）
+    B. CSRF攻击（跨站请求伪造攻击）
+    C. SQL注入
+
+    正确答案：A,B,C
+
+*#*178. 假设蓝鲸社区版安装在/data/bkce目录下，那么SaaS应用日志查询方式是？*#*
+
+    A. /data/bkce/paas_agent/apps/logs/$appcode
+    B. /data/bkce/paas/apps/logs/$appcode
+    C. /data/bkce/apps/logs/$appcode
+
+    正确答案：A
+
+*#*179. 将蓝鲸S-mart上的SaaS部署起来，操作顺序是？
+
+    1. 以管理员的身份进入“开发者中心”
+
+    2. 点击“S-mart应用”
+
+    3. 点击“上传部署新应用”
+
+    4. 选择从蓝鲸 S-mart 上下载的 SaaS 包
+
+    5. 点击“部署”
+
+    6. 部署成功后，即可在“工作台”点击进入
+*#*
+    A. 1-2-3-4-5-6
+    B. 1-3-5-2-4-6
+    C. 1-6-3-4-5-2
+
+    正确答案：A
+
+*#*180. 社区版出现ESB组件调用失败，可以在哪里查日志？*#*
+
+    A. $INSTALL_PATH/logs/open_paas/esb.log
+    B. $INSTALL_PATH/logs/open_paas/esb_api.log
+    C. $INSTALL_PATH/logs/open_paas/paas_esb.log
+    D. $INSTALL_PATH/logs/esb.log
+
+    正确答案：A,B
+
+*#*181. CSS 中要隐藏一个元素，下列正确的是？*#*
+
+    A. display: inline-block;
+    B. display: inline;
+    C. display: none;
+    D. display: inherit;
+
+    正确答案：C
+
+*#*182. 下列属于 CSS 盒模型相关的属性为？*#*
+
+    A. margin
+    B. background
+    C. border
+    D. padding
+
+    正确答案：A,C,D
+
+*#*183. 下列哪个属性是 CSS3 新增的属性？*#*
+
+    A. opacity
+    B. box-shadow
+    C. display
+    D. box-sizing
+
+    正确答案：B,D
+
+*#*184. 下列说法中正确的是？（其中 $ 为 jQuery）*#*
+
+    A. $.trim(str) 可以去掉 str 两端的空格
+    B. 运行 alert('abcdefg'.substring(2, 5)) 会弹出 'cde'
+    C. 运行 alert('abcdefg'.substr(2, 5)) 会弹出 'cde'
+    D. 运行 alert(new Date('2018-12-01').getMonth()) 会弹出 12
+
+    正确答案：A,B
+
+*#*185. 下列 jQuery 异步请求的说法中，错误的是？*#*
+
+    A. $.getScript 方法以 get 方式载入一个 js 文件，并执行该文件的 js 代码
+    B. $.getJSON 以 get 方式请求 JSON 数据
+    C. $.load 可以请求远程的 html 
+    D. $.get 以 get 方式进行异步请求，参数作为 queryString 附加到请求的 URL 中
+
+    正确答案：C
+
+*#*186. 关于 Ajax，下列描述正确的是？*#*
+
+    A. 对搜索引擎比较友好
+    B. 可以实现局部刷新页面
+    C. 提升用户体验，优化了客户端和服务端之间的数据传输
+    D. 核心是 XmlHttpRequest 对象
+
+    正确答案：B,C,D
+
+*#*187. jQuery Ajax 中支持哪些数据类型？*#*
+
+    A. xml
+    B. html
+    C. json
+    D. jsonp
+
+    正确答案：A,B,C,D
+
+*#*188. 下列说法不正确的是？*#*
+
+    A. $('input:checked') 选择的是所有被选中的 input 元素 
+    B. $('#test:disabled') 选择的是 id 为 test 的表单内的所有不可用元素 
+    C. $(':hidden') 选择的是 input 的 type 类型是 hidden 的不可见元素
+    D. $('div > span') 选择的是 div 元素下所有 tag 为 span 的子元素
+
+    正确答案：C
+
+*#*189. 下列哪个是 jQuery 中用来追加到指定元素末尾的方法？*#*
+
+    A. appendTo
+    B. insertAfter
+    C. after
+    D. append
+
+    正确答案：A
+
+*#*190. 下列哪些是正确的 jQuery 选择器？*#*
+
+    A. $('#test')
+    B. $('*#test.test1')
+    C. $('*')
+    D. $('*#test .test1')
+
+    正确答案：A,B,C,D
+
+*#*191. 下列代码能够正确找到 id 为 test 的 div 元素的代码是?（其中 $ 为 jQuery）*#*
+
+    A. $('.test')
+    B. $('div#test')
+    C. $('div.test')
+    D. $('div')
+
+    正确答案：B
+
+*#*192. 蓝鲸SaaS应用后台任务（celery任务）的消息队列服务是？*#*
+
+    A. Redis
+    B. RabbitMQ
+    C. ActiveMQ
+
+    正确答案：B
+
+*#*193. 以下哪些和开发相关的框架\模板是蓝鲸PaaS社区版提供的？*#*
+
+    A. 蓝鲸SaaS应用开发框架（Python版）
+    B. API网关组件开发模板
+    C. 蓝鲸SaaS应用开发框架（Java版）
+
+    正确答案：A,B
+
+*#*194. 假设基于蓝鲸PaaS开发一个会议系统，可以通过以下哪些方式快速开发前端页面？*#*
+
+    A. 使用蓝鲸MagicBox提供的前端组件库，挑选合适的组件，复制源码，线下拼装前端页面
+    B. 使用蓝鲸MagicBox提供的可视化布局服务，在线拖拽拼装前端页面
+    C. 使用蓝鲸MagicBox提供的套餐样例服务，选择合适的样例直接使用
+
+    正确答案：A,B,C
+
+*#*195. 获取下面时间t的年份正确的是？
+
+    import time
+    t=time.localtime()
+*#*
+    A. t[1]
+    B. t.tm_year
+    C. t[0]
+    D. t.year
+
+    正确答案：B,C
+
+*#*196. datetime.datetime.now()格式化成(strftime)"2018-11-10 20:09:52"的字符串是？*#*
+
+    A. "%Y-%m-%d %H:%M:%s"
+    B. "%Y-%m-%d %H:%M:%S"
+    C. "%Y-%M-%d %H:%m:%S"
+    D. "%Y-%m-%D %H:%M:%S"
+
+    正确答案：B
+
+*#*197. 下面显示的代码输出是什么？
+
+    s={2, 5, 6, 6, 7}
+    s
+*#*
+    A. {2, 5, 7}
+    B. {2, 5, 6, 7}
+    C. {2, 5, 6, 6, 7}
+    D. 以上都不是
+
+    正确答案：B
+
+*#*198. Python中函数的优点是什么？*#*
+
+    A. 减少重复的代码
+    B. 将复杂问题分解为更简单的部分
+    C. 提高代码的清晰度
+    D. 以上全部都是
+
+    正确答案：D
+
+*#*199. 关于主模块，以下哪项不正确？*#*
+
+    A. 当直接执行Python文件时，它被认为是程序的主要模块
+    B. 主模块可以导入任意数量的模块
+    C. 主模块的特殊名称是：__ main__
+    D. 其他主模块可以导入主模块
+
+    正确答案：D
+
+*#*200. 以下输出是什么？
+
+    x = 'abcd'
+    print(list(map(list, x)))
+*#*
+    A. [‘a’, ‘b’, ‘c’, ‘d’]
+    B. [‘abcd’]
+    C. [[‘a’], [‘b’], [‘c’], [‘d’]]
+    D. 以上都不是
+
+    正确答案：C
+
+*#*201. Python中，以下哪个不是有效的命名空间？*#*
+
+    A. 全局(Global)命名空间
+    B. 公共(Public)命名空间
+    C. 内置(Built-in)命名空间
+    D. 本地(Local)命名空间
+
+    正确答案：B
+
+*#*202. 下面显示的代码输出是什么？
+
+    import time
+    time.time()
+*#*
+    A. 自1970年1月1日以来的小时数
+    B. 自1970年1月1日以来的天数
+    C. 自1970年1月1日以来的秒数
+    D. 自1970年1月1日以来的分钟数
+
+    正确答案：C
+
+*#*203. 以下哪一项等同于random.randrange(3)？*#*
+
+    A. range(3)
+    B. random.choice(range(0, 3))
+    C. random.shuffle(range(3))
+    D. random.select(range(3))
+
+    正确答案：B
+
+*#*204. print(os.geteuid()) 打印什么?*#*
+
+    A. 当前进程的组id
+    B. 当前进程的用户id 
+    C. 当前进程的组id和用户id 
+    D. 以上都不是
+
+    正确答案：B
+
+*#*205. Python中的pickle.dumps过程包括*#*
+
+    A. 将列表转换为数据表
+    B. 将字节流转换为Python对象层次结构
+    C. 将Python对象层次结构转换为字节流
+    D. 将数据表转换为列表
+
+    正确答案：C
+
+*#*206. 从标准输入读取一行文本的两个内置函数是哪个，默认情况下来自键盘？*#*
+
+    A. raw_input & input
+    B. input & scan
+    C. scan & scanner
+    D. scanner
+
+    正确答案：A
+
+*#*207. 以下哪种是文件中二进制格式的同时写入和读取模式*#*
+
+    A. wb+
+    B. w
+    C. wb
+    D. w+
+
+    正确答案：A
+
+*#*208. 如何删除一个文件*#*
+
+    A. del(fp)
+    B. fp.delete()
+    C. os.remove(‘file’)
+    D. os.delete(‘file’)
+
+    正确答案：C
+
+*#*209. 文件打开模式r+和w+有什么区别？*#*
+
+    A. 没有区别
+    B. 在r+中，指针最初位于文件的开头，而w+，指针处于末尾
+    C. 在w+中，指针最初位于文件的开头，而r+，指针处于末尾
+    D. 取决于操作系统
+
+    正确答案：B
+
+*#*210. 以下哪项不是打开文件的有效模式？*#*
+
+    A. ab
+    B. rw
+    C. r+
+    D. w+
+
+    正确答案：B
+
+*#*211. __invert__()重载了哪个运算符？*#*
+
+    A. !
+    B. ~
+    C. ^
+    D. –
+
+    正确答案：B
+
+*#*212. 哪个函数重载+运算符？*#*
+
+    A. __add__()
+    B. __plus__()
+    C. __sum__()
+    D. 以上答案都不是
+
+    正确答案：A
+
+*#*213. setattr()用于什么？*#*
+
+    A. 访问对象的属性
+    B. 删除属性
+    C. 设置属性
+    D. 检查属性是否存在
+
+    正确答案：C
+
+*#*214. 显示的代码输出是什么？
+
+    def f(x):
+      for i in range(5):
+        yield i
+
+    g=f(8)
+
+    print(list(g))
+*#*
+    A. [0, 1, 2, 3, 4]
+    B. [0, 1, 2, 3, 4, 5, 6, 7]
+    C. [1, 2, 3, 4, 5, 6, 7, 8]
+    D. [1, 2, 3, 4, 5]
+
+    正确答案：A
+
+*#*215. 以下哪项不是Python中的异常处理关键字？*#*
+
+    A. try
+    B. accept
+    C. except
+    D. finally
+
+    正确答案：B
+
+*#*216. 下面显示的代码输出是什么？
+
+    g = (i for i in range(5))
+
+    type(g)
+*#*
+    A. class <’loop’>
+    B. class <‘iteration’>
+    C. class <’range’>
+    D. class <’generator’>
+
+    正确答案：D
+
+*#*217. 以下代码的输出是什么
+
+    class A:
+
+      def __str__(self):
+        return '1'
+
+
+    class B(A):
+
+      def __init__(self):
+        super().__init__()
+
+
+    class C(B):
+
+      def __init__(self):
+        super().__init__()
+
+
+    def main():
+      obj1 = B()
+      obj2 = A()
+      obj3 = C()
+      print(obj1, obj2,obj3)
+
+    main()
+*#*
+    A. 1 1 1
+    B. 1 2 3
+    C. ‘1’ ‘1’ ‘1’
+    D. 抛出异常
+
+    正确答案：A
+
+*#*218. 以下代码的输出是什么?
+
+    class A:
+
+      def one(self):
+        return self.two()
+
+      def two(self):
+        return 'A'
+
+
+    class B(A):
+      def two(self):
+        return 'B'
+
+    obj1=A()
+
+    obj2=B()
+
+    print(obj1.two(),obj2.two())
+*#*
+    A. A A
+    B. A B
+    C. B B
+    D. 抛出异常
+
+    正确答案：B
+
+*#*219. 以下代码的输出是什么?
+
+    class Test:
+
+      def __init__(self):
+        self.x = 0
+
+
+    class Derived_Test(Test):
+      def __init__(self):
+        self.y = 1
+
+    def main():
+      b = Derived_Test()
+      print(b.x,b.y)
+
+    main()
+*#*
+    A. 0 1
+    B. 0 0
+    C. 错误，因为B类继承A但变量x未被继承
+    D. 错误，因为创建对象时，必须像Derived_Test一样传递参数（1）
+
+    正确答案：C
+
+*#*220. 浏览器默认使用什么方法来处理 form 提交？*#*
+
+    A. GET
+    B. POST
+    C. PUT
+    D. SUBMIT
+
+    正确答案：B
+
+*#*221. Django 的缓存框架默认存储在？*#*
+
+    A. 数据库
+    B. 文件
+    C. 内存
+    D. Memcached
+
+    正确答案：C
+
+*#*222. 关于数据库事务，以下说法正确是的？*#*
+
+    A. atomic 对象是一个装饰器，一个函数的所有操作都位于一个事务中
+    B. atomic 对象是一个上下文管理器，一个块的所有操作都位于一个事务中
+    C. 默认事务处于自动提交模式，每个变更立即生效
+    D. 在 atomic 对象的控制范围内，遇到未捕获的异常会自动回滚变更，否则会在结束时自动提交
+
+    正确答案：A,B,C,D
+
+*#*223.  对于 ORM 中 Q 对象的说法，以下正确的是？*#*
+
+    A. Q 对象支持表达式运算
+    B. 用于执行复杂查询
+    C. Q 对象用于 filter 函数时不能同时使用命名查询
+    D. Q 对象是数据库提供的底层特性
+
+    正确答案：B
+
+*#*224. 对于 ORM 中 F 对象的说法，以下正确的是？*#*
+
+    A. F 对象不会将列的值读取到程序内存中
+    B. F 对象会严重加剧竞争，应该避免使用
+    C. 将 F 对象赋值给一个 Model 对象后，多次 save 会导致 F 对象对应字段多次更新
+    D. F 对象常用于更新操作
+
+    正确答案：A,C,D
+
+*#*225. 已知一个 queryset 会返回3条记录，如何获得最后一个对象*#*
+
+    A. queryset[2]
+    B. queryset.get()
+    C. queryset.last()
+    D. queryset.reverse()[0]
+
+    正确答案：A,C,D
+
+*#*226. 对于一个 queryset，以下哪个操作会触发数据库查询？*#*
+
+    A. list(queryset)
+    B. queryset.count()
+    C. bool(queryset)
+    D. queryset.all()
+
+    正确答案：A,B,C
+
+*#*227. 以下不属于 Django 概念的是？*#*
+
+    A. Model
+    B. View
+    C. Template
+    D. Engine
+
+    正确答案：D
+
+*#*228. 关于 Cookies 和 Session 的说法以下正确的是？*#*
+
+    A. Session 是存在服务器数据库中的
+    B. Cookies 存储在客户端，跟随每次请求传输
+    C. Cookies 可能会受 XSS 攻击窃取
+    D. 敏感信息必须存在 Session 中
+
+    正确答案：B,C,D
+
+*#*229. 对于 extends 和 include 模板标记的说法正确的是？*#*
+
+    A. include 会有多次渲染
+    B. include 是在当前模板中嵌入一个子模板的结构
+    C. extends 继承一个模板并修改对应的结构
+    D. 两个标记都使用当前上下文来渲染
+
+    正确答案：A,C,D
+
+*#*230. 对于这个 url 定义：urlpatterns = [path('<int:question_id>/', views.detail)]，
+    视图函数 detail 该如何拿到 url 中传入的 question_id？*#*
+
+    A. 通过 request.url 获取
+    B. 通过视图函数参数获取
+    C. 通过 request.REQUEST 获取
+    D. 通过 request.META 获取
+
+    正确答案：B
+
+*#*231.  在 urls.py 中会有类似于 urlpatterns = [path(r'^articles/$', views.articles)] 一样的声明方式，
+    其中字符串 r'^articles/$' 前的 r 的含义是？*#*
+
+    A. 表示字符串是正则表达式
+    B. 停用字符串转义机制
+    C. 将字符串强制转换成 url 类型对象
+    D. 国际化字符串标记
+
+    正确答案：B
+
+*#*232. 关于 M igration 的说法正确的有？*#*
+
+    A. migration 是追踪数据库 schema 和 model 变更的机制
+    B. 使用 makemigrations 命令来生成描述 model 变更的文件
+    C. 使用 sqlmigrate 命令来生成对应变更的 sql
+    D. 使用 migrate 命令来应用变更
+
+    正确答案：A,B,C,D
+
+*#*233. Django的以下哪个模块用于安全防护*#*
+
+    A. redirects
+    B. csrf
+    C. markup
+    D. contenttypes
+
+    正确答案：B
+
+*#*234. Django的模板中使用哪个关键字来加载其他模板*#*
+
+    A. from
+    B. include
+    C. import
+    D. using
+
+    正确答案：B
+
+*#*235. 模板过滤器使用哪一个符号？*#*
+
+    A. &
+    B. &&
+    C. ||
+    D. |
+
+    正确答案：D
+
+*#*236. 下列代码哪些能够正确创建 JS 函数？*#*
+
+    A. function = myFunction () {}
+    B. function myFunction () {}
+    C. myFunction () {}
+    D. var myFunction = function () {}
+
+    正确答案：B,D
+
+*#*237. 下列代码弹出的正确结果是？
+
+    var a = true;
+
+    alert(a + 0);
+
+    alert(a + "test");
+
+    alert(a + true);
+
+    alert(a + false);
+*#*
+    A. 0, test, true, true
+    B. 0, test, true, false
+    C. 1, test, 1, 2
+    D. 1, truetest, 2, 1
+
+    正确答案：D
+
+*#*238. 下列选项中，能够准确的、完美兼容早期 IE 浏览器的、完美兼容 iframe 问题的判断变量 arr 是否是数组的选项是？*#*
+
+    A. typeof arr
+    B. arr instanceof Array
+    C. arr.__proto__.constructor === Array
+    D. Object.prototype.toString.call(arr) === '[object Array]'
+
+    正确答案：D
+
+*#*239. JS 中正确定义数组的代码是？*#*
+
+    A. var arr = new Array(1:"George",2:"John",3:"Thomas")
+    B. var arr = new Array("George","John","Thomas")
+    C. var arr = new Array:1=("George")2=("John")3=("Thomas")
+    D. var arr = ["George","John","Thomas"]
+
+    正确答案：B,D
+
+*#*240. 下列正确的代码分别是？*#*
+
+    A. Math.ceil(7.25) === 7
+    B. Math.ceil(7.25) === 8
+    C. Math.floor(7.25) === 7
+    D. Math.floor(7.25) === 8
+
+    正确答案：B,C
+
+*#*241. 如下代码什么时候弹出？
+
+    setTimeout(function () {
+      alert(1)
+    }, 2000)
+
+    var time = Date.now()
+
+    while (Date.now() - time < 5000) {}
+*#*
+    A. 2 秒后
+    B. 7 秒后
+    C. 3 秒后
+    D. 5 秒后
+
+    正确答案：D
+
+*#*242. 以下代码运行结果是？
+
+    var a = 1
+    var obj = {
+      b: 2
+    }
+
+    var fn = function () {}
+
+    fn.c = 3
+
+    function test (x, y, z) {
+      x = 4
+      y.b = 5
+      z.c = 6
+      return z
+    }
+
+    test(a, obj, fn)
+
+    alert(a + obj.b + fn.c)
+*#*
+    A. 执行错误
+    B. 12
+    C. 15
+    D. 9
+
+    正确答案：B
+
+*#*243. 如下代码弹出的结果为：
+
+    var name = 'aaa'
+
+    var obj = {
+      name: 'bbb',
+      dose: function () {
+        this.name = 'ccc'
+        return function () {
+          return this.name
+        }
+      }
+    }
+
+    alert(obj.dose().call(this))
+
+    alert(obj.name)
+*#*
+    A. aaa, bbb
+    B. aaa, ccc
+    C. bbb, aaa
+    D. ccc, bbb
+
+    正确答案：B
+
+*#*244. 如下代码中有三处 alert，分别会 alert 什么值，顺序是什么？
+    var a = 0
+
+    function test () {
+
+      var a = 1
+
+      setTimeout(function () {
+        alert('x--' + a)
+        a = 3
+      }, 1000)
+
+      a = 2
+
+      setTimeout(function () {
+        alert('y--' + a)
+        a = 4
+      }, 3000)
+    }
+
+    test()
+
+    alert('z--' + a)
+*#*
+    A. 弹出结果依次为：z--0, x--2, y--3
+    B. 弹出结果依次为：x--2, y--3, z--0
+    C. 弹出结果依次为：y--3, x--2, z--0
+    D. 弹出结果依次为：z--0, x--1, y--2
+
+    正确答案：A
+
+*#*245. 下列关于 JS 的描述中，正确的是？*#*
+
+    A. 单行注释，是在需要注释的行前面加上 //
+    B. 多行注释，是在需要注释的文字两端加 /* 注释内容 */
+    C. 变量命名可以以数字开头
+    D. setTimeout(callback, 10) 的功能是每隔 10 毫秒执行一次 callback 里的内容
+
+    正确答案：A,B
+
+*#*246. 标准运维中，以下关于原子开发哪些说法是正确的？*#*
+
+    A. 如果要调用多次API网关，需要开发多个原子
+    B. 原子的输出参数可以在任务后面的节点中引用
+    C. 原子前端表单至少需要一个参数项
+    D. 原子至少有一个输出参数
+
+    正确答案：B,D
+
+*#*247. 标准运维原子前端表单配置中可以选择哪种类型参数？*#*
+
+    A. input
+    B. textarea
+    C. select
+    D. radio
+
+    正确答案：A,B,C,D
+
+*#*248. 标准运维中，以下哪些函数是每个原子都必须后台编码实现的？*#*
+
+    A. execute
+    B. schedule
+    C. outputs_format
+    D. inputs_format
+
+    正确答案：A,C
+
+*#*249. 标准运维开发原子需要开发者实现哪些功能？*#*
+
+    A. 后台执行逻辑
+    B. 前端表单配置
+    C. 参数替换
+    D. 参数校验
+
+    正确答案：A,B,D
+
+*#*250. 对于 Model 字段定义的选项，以下说法正确的是？*#*
+
+    A. null=True，代表该数据库字段允许空值（None）
+    B. blank=True，代表该字段非必填
+    C. default=None，代表该字段没有设置默认值
+    D. unique=True，代表着该字段会在数据库加上唯一索引
+
+    正确答案：A,B,D
+
+*#*251. 对于 Django Model 的描述，以下哪些是正确的？*#*
+
+    A. 模型都是一个特定继承于 django.db.models.Model 的类
+    B. 模型只允许定义字段属性，不能定义方法
+    C. 模型的每个属性都代表着数据库的一个字段
+    D. Django 通过 Model 的定义会动态生成一系列对应数据库操作的 API
+
+    正确答案：A,C,D
+
+*#*252. 下面关于，Django 中 QuerySet 的 get 和 filter 方法描述正确的有：*#*
+
+    A. get 的参数只能是 model 中定义的那些字段，只支持严格匹配；filter 的参数可以是字段，也可以是扩展的where查询关键字
+    B. get 返回值是一个 model 对象; filter 返回值是一个 QuerySet 对象
+    C. get 只有一条记录返回的时候才正常；filter 有没有匹配的记录都可以
+    D. get、filter 都不会产生异常
+
+    正确答案：A,B,C
+
+*#*253. 关于国际化，以下说法正确的是？*#*
+
+    A. 国际化是指将语言和时间转换成对应用户的语言和对应时区的时间
+    B. 模板文件不能进行国际化，要针对不同语言编写不同版本
+    C. 国际化需要准备多套语言对应的翻译文本
+    D. django.utils.translation.gettext 会将字符串转换成对应语言的翻译
+
+    正确答案：A,C,D
+
+*#*254.  在 Django 中，并发场景下，以下哪些方法可以用于保证数据一致性：*#*
+
+    A. 对可能产生脏数据的操作开启事务
+    B. 利用 F 函数更新运算
+    C. 利用 select_for_update 函数
+    D. 不要使用 Django 内置的 ORM，替换为 SQLAlchemy 
+
+    正确答案：A,B,C
+
+*#*255. 以下关于 Django 信号描述错误的是：*#*
+
+    A. Django Signal 是对观察者模式的实现和应用
+    B. Django Signal 是异步的，可以用于模块解耦
+    C. Django 内置了大量 Signal，可以直接使用
+    D. Django Signal 不适合处理大批量任务
+
+    正确答案：B
+
+*#*256. 关于 Django admin 后台，以下说法正确的是？*#*
+
+    A. admin 提供了管理 model 数据库记录的界面
+    B. admin 提供了扩展开发的机制
+    C. admin 只能让超级管理员进行登录，因为可以看到所有用户的密码
+    D. admin 的操作无法审计，所以不能在 admin 上进行数据删除
+
+    正确答案：A,B
+
+*#*257. Django Form 提供的主要功能有：*#*
+
+    A. 生成HTML标签
+    B. 验证用户数据
+    C. 自动生成错误提示信息
+    D. 初始化页面显示内容
+
+    正确答案：A,B,C,D
+
+*#*258. 如何使文本以大写字母开头？*#*
+
+    A. 无法通过 CSS 来实现
+    B. {text-transform: uppercase;}
+    C. {text-transform: capitalize;}
+
+    正确答案：C
+
+*#*259. 关于 Django 的单元测试，以下说法正确的是？*#*
+
+    A. 无法对模板进行单元测试
+    B. django.test.Client 提供了一个特殊 HTTP 客户端以便模拟请求
+    C. manage.py test 命令会为测试创建一个特殊的数据库
+    D. 对于需要权限认证的 view，因为需要登录因此不能编写单元测试
+
+    正确答案：B,C
+
+*#*260. 如下代码，span2 是颜色？
+
+    <style type="text/css">
+
+      span:nth-of-type(2) {
+        color: red;
+      }
+
+      span:nth-child(2) {
+        color: green;
+      }
+
+    </style>
+
+    <div>
+      <p>p1</p>
+      <p>p2</p>
+      <span>span1</span>
+      <span>span2</span>
+    </div>
+*#*
+    A. green
+    B. red
+
+    正确答案：B
+
+*#*261. Django，是一个全能型 Web 框架。以下哪些，也是常见的基于 Python 的 Web 框架：*#*
+
+    A. Tornado
+    B. Flask
+    C. Gin
+    D. Web2py
+
+    正确答案：A,B,D
+
+*#*262. Python 中列表和元组有哪些区别：*#*
+
+    A. 元组是不可变的， 而列表是可变的
+    B. 不能将列表当作字典的 key， 而元组可以
+    C. 元组支持的操作比列表稍快
+    D. 元组与列表支持的操作完全一样
+
+    正确答案：A,B,C
+
+*#*263. Python 是一门面向对象的语言，支持以下哪些继承方式：*#*
+
+    A. 单继承：一个类继承自单个基类
+    B. 多继承：一个类继承自多个基类
+    C. 分层继承：多个类继承自单个基类
+    D. 混合继承：两种或多种类型继承的混合 
+
+    正确答案：A,B,C,D
+
+*#*264. 关于 Django 的日志机制，以下说法正确的是？*#*
+
+    A. 默认根据 settings 中 LOGGING 这个配置自动进行初始化
+    B. 默认需要自行根据 logging 来进行初始化
+    C. 可以通过修改配置的方式来控制不同模块的日志行为
+    D. 兼容 logging 模块
+
+    正确答案：A,C,D
+
+*#*265. 应用下列哪些 CSS 属性后，会导致浏览器触发重排？*#*
+
+    A. {width: 100px;}
+    B. {display: none;}
+    C. {transform: translate(100px, 100px);}
+    D. {color: red;}
+
+    正确答案：A,B
+
+*#*266. 作为一门编程入门语言，Python主要有哪些特点和优点：*#*
+
+    A. 具有动态特性
+    B. 面向对象
+    C. 开源
+    D. 编译性语言，速度快
+
+    正确答案：A,B,C
+
+*#*267. 对于信号，以下说法正确的是？*#*
+
+    A. 一个信号可以有多个发送者
+    B. 一个信号可以通知多个接受者
+    C. 信号的接受者是在不同线程中异步处理的
+    D. 信号用于解耦模块逻辑
+
+    正确答案：A,B,D
+
+*#*268. 中间件支持的方法有？*#*
+
+    A. process_request
+    B. process_exception
+    C. process_query
+    D. process_response
+
+    正确答案：A,B,D
+
+*#*269. 假设在一个 View 中需要对一个 queryset 进行分页处理，每页25项，
+    为了避免不必要的数据库查询，以下方式能够返回第二页且合理的是？*#*
+
+    A. queryset.filter(id__gte=25, id__lt=50)
+    B. list(queryset)[25:50]
+    C. Paginator(queryset, 25).page(2)
+    D. queryset.all()[25:50]
+
+    正确答案：C,D
+
+*#*270. 下列哪些元素不是 block 元素？*#*
+
+    A. ul
+    B. img
+    C. select
+    D. input
+
+    正确答案：B,C,D
+
+*#*271. display 属性值的取值不包括下列哪些？*#*
+
+    A. hidden
+    B. inline
+    C. block
+    D. none
+
+    正确答案：A
+
+*#*272. CSS 文件中如何插入注释？*#*
+
+    A. // 注释内容
+    B. // 注释内容 // 
+    C. “”“ 注释内容 ”“”
+    D. /* 注释内容 */
+
+    正确答案：D
+
+*#*273.  下列哪个 CSS 语法是正确的？*#*
+
+    A. body.color = red
+    B. {body.color = red}
+    C. {body:color = red}
+    D. body {color: red}
+
+    正确答案：D
+
+*#*274. 以下哪个是正确引用外部样式表的方法？*#*
+
+    A. <style src="test.css" />
+    B. <styleshee>test.css</stylesheet>
+    C. <link rel="stylesheet" type="text/css" href="test.css" />
+    D. <style href="test.css" />
+
+    正确答案：C
+
+*#*275. 下列对 position 属性的值的描述错误的是？*#*
+
+    A. static（默认），按照证常文档流进行排列
+    B. relative（相对定位），不脱离文档流，相对于自身静态位置通过 top, bottom,left, right 来定位
+    C. absolute（绝对定位），脱离文档流，相对于自身父级元素位置通过 top, bottom,left, right 来定位
+    D. fixed（固定定位），脱离文档流，相对于浏览器窗口通过 top, bottom, left, right来定位
+
+    正确答案：C
+
+*#*276. 下列哪个 CSS 选择符的优先级最高？*#*
+
+    A. id
+    B. !important
+    C. class
+    D. *
+
+    正确答案：B
+
+*#*277. Python2 到 Python3 是一个较大的版本更新。目前，生产环境依然有大量项目使用的是 Python2。
+    但，这并不意味着项目会一直停留在 Python2，开发者也需要考虑项目对 Python3的兼容性，以方便迁移。
+    请问，Python 3 与 Python 2 有哪些区别：*#*
+
+    A. print 函数化
+    B. 浮点运算
+    C. xrange 替代 range
+    D. 解释器使用 Python 实现
+
+    正确答案：A,B,C
+
+*#*278. 序列化，是将内存对象转化为可存储或传输序列的过程。反序列化，是将序列化序列重新转化为内存对象的过程。
+    以下哪些库在 Python 中经常用于上述的两个过程：*#*
+
+    A. Json
+    B. Pickle
+    C. marshal
+    D. cPickle
+
+    正确答案：A,B,C,D
+
+*#*279. crontab中， 需要配置某个任务在每天的 00:30:00 执行，以下哪个配置是正确？*#*
+
+    A. 30 0 * * *
+    B. * 0 30 * *
+    C. * * 0 30 *
+    D. * * * 0 30
+
+    正确答案：A
+
+*#*280. 下列哪些命令可以查询当前已打开的端口信息？*#*
+
+    A. ip
+    B. ss
+    C. lsof
+    D. netstat
+
+    正确答案：B,C,D
+
+*#*281. 以下哪个文件可以获取到CentOS的版本号信息？*#*
+
+    A. /etc/motd
+    B. /etc/centos-version
+    C. /etc/centos-release
+    D. /etc/protocols
+
+    正确答案：C
+
+*#*282. Linux文件系统中，记录了文件的哪些时间？*#*
+
+    A. 访问时间
+    B. 创建时间
+    C. 修改时间
+    D. 删除时间
+
+    正确答案：A,C
+
+*#*283. DNS默认使用哪个端口进行通信？*#*
+
+    A. 21
+    B. 22
+    C. 53
+    D. 25
+
+    正确答案：C
+
+*#*284. 在Bash脚本中，"$$"代表的是？*#*
+
+    A. 父进程PID
+    B. 当前进程PID
+    C. 参数列表
+    D. 返回码
+
+    正确答案：B
+
+*#*285. Linux使用下列哪个命令来设置防火墙规则?*#*
+
+    A. ipsec
+    B. ipfw
+    C. iptables
+    D. route
+
+    正确答案：C
+
+*#*286. 下列哪个命令可以查看网卡的流量？*#*
+
+    A. dig
+    B. ip
+    C. route
+    D. sar
+
+    正确答案：D
+
+*#*287. kill -0 8080 命令的返回码为非0，原因可能是？*#*
+
+    A. 该PID的进程不存在
+    B. 用户没有该PID所属进程的权限
+    C. 该PID的所属进程无法退出
+    D. 该PID的所属进程正处于sleep状态
+
+    正确答案：A,B
+
+*#*288. 在命令 echo "123" >log 2>/dev/null 中，数字2代表的是？*#*
+
+    A. 标准输入
+    B. 标准输出
+    C. 标准错误
+    D. 垃圾信息
+
+    正确答案：C
+
+*#*289. Django中，关于 view，以下说法正确的是？*#*
+
+    A. view 负责将 HTTP 请求转换成响应
+    B. 中间件可以拦截 view 的请求
+    C. 可以使用 require_POST 装饰器来限制一个 view 只能被 POST 方法请求
+    D. 一个 view 函数结束的时候代表一个 http 请求马上结束
+
+    正确答案：A,B,C
+
+*#*290. 下列关于kill命令的描述，正确的是哪些？*#*
+
+    A. SIGKILL可以被捕获
+    B. kill默认发送的是SIGTERM信号
+    C. SIGHUP信号的默认操作时终止进程
+    D. SIGQUIT信息的默认操作时终止进程
+
+    正确答案：B,C,D
+
+*#*291. Linux系统中设置环境变量后，会影响哪种类型的进程？*#*
+
+    A. 父进程
+    B. 子孙进程
+    C. 兄弟进程
+    D. 不影响
+
+    正确答案：B
+
+*#*292. 关于 Django 模板，以下说法正确的是？*#*
+
+    A. 支持完整 Python 语法
+    B. 允许继承和嵌套
+    C. 使用模板渲染的字符串变量不能含有尖括号（<>）等符号，以避免引发 XSS 攻击
+    D. 模板的渲染是交给浏览器进行的
+
+    正确答案：B
+
+*#*293. Django的View 中如何取得请求 X-App-Code 的值？*#*
+
+    A. request.META["HTTP_X_APP_CODE"]
+    B. request.HEADERS["X-APP-CODE"]
+    C. request.REQUEST["HTTP_X_APP_CODE"]
+    D. request.REQUEST["X-APP-CODE"]
+
+    正确答案：A
+
+*#*294. 以下哪些是合适的视图返回结果？*#*
+
+    A. 返回一个 QuerySet 对象
+    B. 返回 HttpResponse 对象
+    C. 返回 django.shortcuts.render 结果
+    D. 抛出 Http404 异常
+
+    正确答案：B,C,D
+
+*#*295. Django 的 ORM 如何管理数据库连接数量？*#*
+
+    A. 默认使用连接池进行连接复用
+    B. 根据 CONN_MAX_AGE 设置管理长连接
+    C. 每次请求前打开一个数据库连接
+    D. 每次请求后关闭无效数据库连接
+
+    正确答案：B,D
+
+*#*296. 以下哪行代码不会显示匹配项？*#*
+
+    A. >>> re.match(‘ab*’, ‘a’)
+    B. >>> re.match(‘ab*’, ‘ab’)
+    C. >>> re.match（'ab *'， 'abb')
+    D. >>> re.match(‘ab*’, ‘ba’)
+
+    正确答案：D
+
+*#*297. 以下代码的输出是什么？
+
+    ​def fun(n):
+      if (n > 100):
+        return n - 5
+      return fun(fun(n+11));
+
+    print(fun(45))
+*#*
+    A. 50
+    B. 100
+    C. 74
+    D. 无限循环
+
+    正确答案：B
+
+*#*298. 这个表达式的输出是什么，3 * 1 ** 3？*#*
+
+    A. 27
+    B. 9
+    C. 3
+    D. 1
+
+    正确答案：C
+
+*#*299. 相比较于 Django 内置的模板，Mako 模板有哪些优点：*#*
+
+    A. 渲染速度更快
+    B. 支持语言更多
+    C. 不依赖于 Django，可以单独使用
+    D. 贴近 Python 语法，支持在模版中写 Python 代码
+
+    正确答案：A,C,D
+
+*#*300. Mako 有一组内建的转义机制，这些转义可以用 | 操作添加到表达式替换。下面哪些是 Mako 内置的过滤器：*#*
+
+    A. u，URL 转义
+    B. h，HTML 转义
+    C. x，XML 转义
+    D. trim，空白截断
+
+    正确答案：A,B,C,D
+
+*#*301. 以下哪些是 Mako 的注释格式：*#*
+
+    A. ## this is a comment.
+    B. <%doc> ...text... </%doc> 
+    C. # this is a comment.
+    D. // this is a comment.
+
+    正确答案：A,B
+
+*#*302. Mako 内置了一些标签，类似于 XML 标签。不同之处在于其标签名称必须以 % 开头。
+    标签的关闭可以用反斜杠的内联形式，或者独立的关闭标签。
+    以下属于 Mako 内置标签的有：*#*
+
+    A. <%page>
+    B. <%include>
+    C. <%def>
+    D. <%call>
+
+    正确答案：A,B,C,D
+
+*#*303. 下面是一段 Mako 模板片段，is_admin = 0 请给出执行结果：
+
+    %if is_admin:
+
+      我是管理员
+
+    %else:
+
+      我是普通用户
+
+    %endif
+*#*
+    A. 执行报错
+    B. 我是管理员
+    C. 我是普通用户
+    D. 无
+
+    正确答案：C
+
+*#*304. 下面哪些属于 SQL注入的危害：*#*
+
+    A. 窃取Cookie，劫持Session
+    B. 非法查询其他数据库资源
+    C. 执行系统命令
+    D. 获取服务器 root 权限
+
+    正确答案：B,C,D
+
+*#*305. 出于安全考虑，浏览器对于不同源站点之间的相互请求会做限制，这称之为同源策略。同源指的是哪些内容相同：*#*
+
+    A. 域名
+    B. 协议
+    C. 端口
+    D. 浏览器
+
+    正确答案：A,B,C
+
+*#*306. 下面哪些是常见的 Web 攻击技术：*#*
+
+    A. DoS和DDoS攻击
+    B. CSRF(Cross Site Request Forgery)
+    C. SQL注入(SQL Injection)
+    D. DOM Based XSS
+
+    正确答案：A,B,C,D
+
+*#*307. XSS 恶意攻击者，通常会往 Web 页面里插入恶意 JavaScript 代码。
+        当其他用户浏览页面时，嵌入其中的 JavaScript 代码会被执行，
+        从而达到恶意攻击用户的目的。下面哪些是常见的防御 XSS 的方式：*#*
+
+    A. 在 Cookie 中设置 httponly
+    B. xss filter（检查输入，设置白名单方式）
+    C. 禁止使用任何富文本输入
+    D. header 中使用 content-Sencurity-Policy 字段，规定请求 js 的域名白名单
+
+    正确答案：A,B,D
+
+*#*308. XSS 攻击，全称跨站脚本攻击。所有来自 COOKIE、POST 表单、GET 请求、HTTP 头的内容都可能是 XSS 攻击的入口。
+        以下哪些是常见的 XSS 攻击类型：*#*
+
+    A. 反射型 XSS
+    B. 存储型 XSS
+    C. 富文本XSS
+    D. DOM Based XSS
+
+    正确答案：A,B,D
+
+*#*309. 如果在下面显示的代码中找不到该文件，会发生什么？
+
+    a=False
+
+    while not a:
+      try:
+        f_n = input("Enter file name")
+        i_f = open(f_n, 'r')
+      except:
+        print("Input file not found")
+*#*
+    A. 无错误
+    B. 断言(Assertion)错误
+    C. 输入输出(Input output)错误
+    D. 名称(Name)error
+
+    正确答案：A
+
+*#*310. 一个except语句块可以处理多个异常吗？*#*
+
+    A. 是，比如TypeError, SyntaxError [,…]
+    B. 是，比如[TypeError，SyntaxError]
+    C. 是，比如(TypeError, ValueError)
+    D. 不能
+
+    正确答案：C
+
+*#*311. 什么时候会执行try-except-else的else部分*#*
+
+    A. 总是
+    B. 当发生异常时
+    C. 没有异常发生
+    D. 当包含块之外执行发生异常时
+
+    正确答案：C
+
+*#*312. 以下哪项是无效陈述？*#*
+
+    A. abc = 1,000,000 
+    B. abc = 1000 2000 3000 
+    C. a，b，c = 1000,2000,3000
+    D. a_b_c = 1,000,000
+
+    正确答案：B
+
+*#*313. 处理标识符时，Python是否区分大小写？*#*
+
+    A. 是
+    B. 否
+    C. 机器依赖
+    D. 不确定
+
+    正确答案：A
+
+*#*314. 一根木棒，截成三截，组成三角形的概率是*#*
+
+    A. 2/3
+    B. 1/2
+    C. 1/3
+    D. 1/4
+
+    正确答案：D
+

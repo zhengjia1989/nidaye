@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <title>{% block title %}登录{% endblock %}</title>
+</head>
+<body>
+    <div class="container box">
+
+        <form method="post"
+              {% block link %}
+              action="{% url 'tologin' %}"
+              {% endblock %}
+              novalidate class="form-horizontal" role="form">
+
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username" class="col-md-5 control-label">{{ form.username.label }}</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control w-50" id="id_username" name="username">
+                </div>
+                <sapn class="text-danger col-md-2">{{ form.username.errors.0 }}</sapn>
+            </div>
+            <div class="form-group">
+                <label for="id_password group1" class="col-md-5 control-label">{{ form.password.label }}</label>
+                <div class="col-md-5">
+                    <input type="password" class="form-control w-50" id="id_password" name="password">
+                </div>
+                <sapn class="text-danger col-md-2">{{ form.password.errors.0 }}</sapn>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-5 col-md-7">
+                    {% block input %}
+                        <input type="submit" value="登录" class="btn bg-primary">
+                    {% endblock %}
+                    <input type="reset" value="取消" class="btn btn-dark input_css">
+                    {% block text %}
+                        <a href="{% url 'register' %}" style="vertical-align: bottom; margin-left: 10px;">注册账号?</a>
+                    {% endblock %}
+                </div>
+            </div>
+        </form>
+    </div>
+ <script>
+        var code = "{{ resp.code }}" || null;
+        var msg = "{{ resp.msg }}" || null;
+        window.onload = function fun() {
+            if(code){
+                alert(msg);
+            }
+        }
+    </script>
+</body>
+
+

@@ -1,0 +1,7 @@
+.box_block{
+    transform: translateY(220px);
+    width: 900px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

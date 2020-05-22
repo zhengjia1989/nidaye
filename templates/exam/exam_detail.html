@@ -1,0 +1,66 @@
+{% extends "exam/base.html" %}
+{% load static %}
+{% block title %}
+   考试
+{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/exam_list.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="box_block" style="width: 1000px">
+        <form action="{% url 'test_result' %}" method="post" class="form-group" id="form_box">
+            {% csrf_token %}
+
+            <p><input type="hidden" value="{{ result_id }}" name="result_id"></p>
+            <p><input type="hidden" value="" id="opts" name="options"></p>
+            {% for item in page %}
+                <p><input type="hidden" value="{{ item.id }}" name="test_record_id"></p>
+                <pre class="text-left">
+                    <div>({{ item.question.get_choice_status_display }})&nbsp;&nbsp;{{ item.question.question }}</div>
+                </pre>
+
+                <ul class="list-unstyled">
+                    {% for opt in item.question.question_options.all %}
+                    <li>
+                        <div style="display: flex; flex-direction: row;">
+                            <input type="checkbox" value="{{ opt.id }}" style="width: 50px;height: 30px" class="options">
+                            <span class="text-left" style="line-height: 40px;">{{ opt.desc }}</span>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            {% endfor %}
+            <div style="text-align: center">
+                <ul class="pagination pagination-md">
+                    {% if page.has_previous %}
+                        <li class="page-item"><a onclick="go()" href="{% url 'page' result_id page.previous_page_number 0 %}" class="page-link " aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a></li>
+                    {% endif %}
+                    {% for num in page.paginator.page_range %}
+                        {% if page.number == num %}
+                            <li class="page-item active"><a onclick="go()" id="go" href="{% url 'page' result_id num 0 %}" class="page-link">{{ num }}</a></li>
+                        {% else %}
+                            <li class="page-item"><a onclick="go()" href="{% url 'page' result_id num 0 %}" class="page-link" id="page">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page.has_next %}
+                        <li class="page-item"><a onclick="go()" href="{% url 'page' result_id page.next_page_number 0 %}" class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span></a></li>
+                        </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div style="text-align: center">
+                {% if page.paginator.num_pages == page.number %}
+                    <input type="submit" value="提交" class="btn bg-primary" style="color: #ffffff">
+                {% endif %}
+            </div>
+        </form>
+    </div>
+    <script>
+       var result_id = "{{ result_id }}";
+    </script>
+    <script src="{% static 'js/exam_detail.js' %}"></script>
+{% endblock %}

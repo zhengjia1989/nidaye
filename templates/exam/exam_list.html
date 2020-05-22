@@ -1,0 +1,106 @@
+{% extends "exam/base.html" %}
+{% load static %}
+{% block title %}
+   题库列表
+{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/exam_list.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div class="box_block" style=" height: 423px;">
+        {% if exams %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>考试题目</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in exams %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td class="choseTitle"><a href="{% url 'start_test' record.id %}" data-count="{{ record.exam_title.count }}">{{ record.title }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h3 class="text-center text-warning">亲,系统正在维护中</h3>
+        {% endif %}
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-info">选择抽题范围或随机抽题数量</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+              <div></div>
+              <div class="desc"></div>
+               <div class="form-inline">
+                     <span>抽题范围</span>
+                    <input type="number" class="w-25 form-control ml-3" id="start">&nbsp; to &nbsp;
+                    <input type="number" class="w-25 form-control" id="end">
+               </div>
+                <div class="text-danger" id="txtWarn1"></div>
+
+                <div class="form-inline mt-3">
+                    <span>抽题数量</span> <input type="number" class="w-25 form-control ml-3" id="questionNum">
+                </div>
+               <div class="text-danger" id="txtWarn2"></div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="btn">确认</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script>
+        "use strict";
+        let href = null;
+        let totalCount = null;
+        $("td.choseTitle").on("click", "a", function (e) {
+            e.preventDefault();
+            var $a = $(this);
+            href = $a[0].href;
+            totalCount = $a.attr("data-count");
+            console.log(href);
+            $(".desc").html(`<h6 class="text-primary">共有${$a.attr("data-count")}道题</h6>`);
+            $("#myModal").modal("show");
+
+        });
+        $("#btn").click(function (e) {
+            let start = $("#start").val();
+            let end = $("#end").val();
+            console.log(start, end);
+            console.log(totalCount);
+            let questionNum = $("#questionNum").val();
+            if(start || end){
+                if(!(start-1>=0 && end<=Number(totalCount))){
+                    $("#txtWarn1").html(`请输入大于0,小于或等于${totalCount}的范围`);
+                    return
+                }
+            }
+            else if(questionNum){
+                if(!(questionNum>0 && questionNum<=Number(totalCount))){
+                    $("#txtWarn2").html(`请输入大于0,小于或等于${totalCount}抽题数量`);
+                    return
+                }
+            }
+            $("#myModal").modal("hide");
+            var src = href + `?start=${start}&end=${end}&questionNum=${questionNum}`;
+            console.log(src);
+            location.href = src;
+
+        })
+
+    </script>
+
+{% endblock %}
