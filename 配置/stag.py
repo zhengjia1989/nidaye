@@ -25,7 +25,7 @@ DATABASES.update(
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'wordpres',  #  数据库名
             'USER': 'wordpres',  #  用户
-            'PASSWORD' : 'Bgx123.com',  # 数据库密码
+            'PASSWORD': 'Bgx123.com',  # 数据库密码
             'HOST': '192.168.50.118',  # 数据库 IP
             'PORT': '3306',
         },
